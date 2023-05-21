@@ -14,8 +14,9 @@ const FilePicker = ({ file, setFile, readFile }) => {
         <label htmlFor="file-upload" className="filepicker-label">
           Upload File
         </label>
+          </div>
         <p className="mt-2 text-gray-500 text-xs truncate">
-          {file === '' ? "No file selected" : file.name}
+          {file === "" ? "No file selected" : file.name}
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <CustomButton
@@ -31,7 +32,6 @@ const FilePicker = ({ file, setFile, readFile }) => {
             customStyles="text-xs"
           />
         </div>
-      </div>
     </div>
   );
 };
