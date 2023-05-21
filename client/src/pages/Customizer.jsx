@@ -19,8 +19,8 @@ import {
 const Customizer = () => {
   const snap = useSnapshot(state);
 
-  const [file, setFile] = useState("");
-  const [prompt, setPrompt] = useState("");
+  const [file, setFile] = useState('');
+  const [prompt, setPrompt] = useState('');
   const [generatingImg, setGeneratingImg] = useState(false);
 
   const [activeEditorTab, setActiveEditorTab] = useState("");
@@ -56,7 +56,7 @@ const Customizer = () => {
     try {
       // call our backend api to geenrate image
       setGeneratingImg(true);
-      const response = await fetch('http://localhost:8080/api/v1/dalle', {
+      const response = await fetch('https://threejs-sandy-congreve.onrender.com//api/v1/dalle', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({ prompt }),
@@ -138,6 +138,7 @@ const Customizer = () => {
               </div>
             </div>
           </motion.div>
+
           <motion.div
             className="absolute z-10 top-5 right-5"
             {...fadeAnimation}
@@ -149,6 +150,7 @@ const Customizer = () => {
               customStyles="w-fit px-4 py-2.5 font-bold text-sm"
             />
           </motion.div>
+
           <motion.div
             className="filtertabs-container"
             {...slideAnimation("up")}
@@ -156,9 +158,9 @@ const Customizer = () => {
             {FilterTabs.map((tab) => (
               <Tab
                 key={tab.name}
+                tab={tab}
                 isFilterTab
                 isActiveTab={activeFilterTab[tab.name]}
-                tab={tab}
                 handleClick={() => handleActiveFilterTab(tab.name)}
               />
             ))}
