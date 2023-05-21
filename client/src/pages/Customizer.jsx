@@ -6,7 +6,12 @@ import config from "../config/config";
 import state from "../store";
 import { download } from "../assets";
 import { downloadCanvasToImage, reader } from "../config/helpers";
-import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants";
+import {
+  EditorTabs,
+  FilterTabs,
+  DecalTypes,
+  DownloadButton,
+} from "../config/constants";
 import { fadeAnimation, slideAnimation } from "../config/motion";
 import {
   AIPicker,
@@ -19,8 +24,8 @@ import {
 const Customizer = () => {
   const snap = useSnapshot(state);
 
-  const [file, setFile] = useState('');
-  const [prompt, setPrompt] = useState('');
+  const [file, setFile] = useState("");
+  const [prompt, setPrompt] = useState("");
   const [generatingImg, setGeneratingImg] = useState(false);
 
   const [activeEditorTab, setActiveEditorTab] = useState("");
@@ -56,15 +61,17 @@ const Customizer = () => {
     try {
       // call our backend api to geenrate image
       setGeneratingImg(true);
-      const response = await fetch('https://threejs-sandy-congreve.onrender.com/api/v1/dalle', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ prompt }),
-      });
+      const response = await fetch(
+        "https://threejs-sandy-congreve.onrender.com/api/v1/dalle",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt }),
+        }
+      );
       const data = await response.json();
 
       handleDecals(type, `data:image/png;base64,${data.photo}`);
-
     } catch (error) {
       alert(error);
     } finally {
@@ -85,7 +92,7 @@ const Customizer = () => {
     }
   };
 
-  // setting 
+  // setting
 
   const handleActiveFilterTab = (tabName) => {
     switch (tabName) {
@@ -162,6 +169,13 @@ const Customizer = () => {
                 isFilterTab
                 isActiveTab={activeFilterTab[tab.name]}
                 handleClick={() => handleActiveFilterTab(tab.name)}
+              />
+            ))}
+            {DownloadButton.map((tab) => (
+              <Tab
+                key={tab.name}
+                tab={tab}
+                handleClick={downloadCanvasToImage}
               />
             ))}
           </motion.div>

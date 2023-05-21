@@ -10,8 +10,8 @@ const CameraRig = ({ children }) => {
   const snap = useSnapshot(state);
   useFrame((state, delta) => {
     //Make responsive desktop and mobile
-    const isBreakpoint = window.innerWidth < 1260;
-    const isMobile = window.innerWidth < 600;
+    const isBreakpoint = window.innerWidth <= 1260;
+    const isMobile = window.innerWidth <= 600;
 
     // set initial position of the model
     let targetPostion = [-0.4, 0, 2];
