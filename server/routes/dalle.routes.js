@@ -11,7 +11,7 @@ dotenv.config();
 const router = express.Router();
 
 // set up openai config to access the api key
-const config = new Configuration({ apiKey: process.env.OPENAI_API_KEY, });
+const config = new Configuration({ apiKey: process.env.VITE_OPENAI_API_KEY, });
 
 // utilize config and merge it with your instance of openai api
 
