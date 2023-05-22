@@ -28,11 +28,11 @@ html {
 }
 
 .home-content {
-  @apply flex-1 xl:justify-center justify-start flex flex-col gap-10;
+  @apply flex-1 xl:justify-center justify-start flex flex-col xl:gap-5 gap-[20rem];
 }
 
 .head-text {
-  @apply xl:text-[10rem] text-[6rem] xl:leading-[11rem] leading-[7rem] font-black text-black;
+  @apply xl:text-[10rem] text-[4.5rem] xl:leading-[11rem] leading-[4.4rem] font-black text-black;
 }
 
 .download-btn {
@@ -94,3 +94,4 @@ input[type="file"] {
 .sketch-picker > div:nth-child(3) {
   display: none !important;
 }
+

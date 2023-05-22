@@ -17,28 +17,33 @@ const Home = () => {
         <motion.section className="home" {...slideAnimation("left")}>
           <motion.header {...slideAnimation("down")}>
             <img
-              src="./threejs.png"
+              src="./logo.svg"
               alt="logo"
-              className="w-8 h-8 object-contain"
+              className="w-14 h-14 object-contain"
             />
           </motion.header>
           <motion.div className="home-content" {...headContainerAnimation}>
             <motion.div {...headTextAnimation}>
               <h1 className="head-text">
-                LETS <br className="xl:block hidden" />
-                DO IT
+                Hi! <br className="xl:block hidden" />
+                I'm Sandy!
               </h1>
             </motion.div>
             <motion.div
               {...headContentAnimation}
               className="flex flex-col gap-5"
             >
-              <p className="max-w-md font-normal text-gray-600 text-base">
-                Create your unique and exclusive shirt with out brand new 3d
-                customization tool. <strong> Unleash your imagniation</strong>{" "}
-                and define your own style.
+              <p className="max-w-md font-normal text-base">
+                I'm a frontend developer that's loves to explore new
+                technologies, develop playful and clean designs that makes one feel something.
+                <strong> Try out my t-shirt customizer made using threejs/DALL-E Ai/ React three fiber/</strong>
               </p>
-              <CustomButton type="filled" title="Customize it" handleClick={() => state.intro = false} customStyle="w-fit px-4 py-2.5 font-bold text-sm"/>
+              <CustomButton
+                type="filled"
+                title="Customize it"
+                handleClick={() => (state.intro = false)}
+                customStyle="w-fit px-4 py-2.5 font-bold text-sm"
+              />
             </motion.div>
           </motion.div>
         </motion.section>
