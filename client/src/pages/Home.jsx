@@ -35,7 +35,7 @@ const Home = () => {
             >
               <p className="max-w-md font-normal text-base">
                 I'm a frontend developer that's loves to explore new
-                technologies, develop playful and clean designs that makes one feel something.
+                technologies, develop clean designs with playful(e)motions).
                 <strong> Try out my t-shirt customizer made using threejs/DALL-E Ai/ React three fiber/</strong>
               </p>
               <CustomButton
