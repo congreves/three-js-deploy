@@ -7,7 +7,7 @@ import {
   headContentAnimation,
   slideAnimation,
 } from "../config/motion";
-import { CustomButton } from "../components";
+import { Chat, CustomButton } from "../components";
 
 const Home = () => {
   const snap = useSnapshot(state);
@@ -46,6 +46,7 @@ const Home = () => {
               />
             </motion.div>
           </motion.div>
+          <Chat />
         </motion.section>
       )}
     </AnimatePresence>
