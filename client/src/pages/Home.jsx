@@ -7,7 +7,7 @@ import {
   headContentAnimation,
   slideAnimation,
 } from "../config/motion";
-import { CustomButton } from "../components";
+import { CustomButton } from "../components/ShirtCustomizer";
 
 const Home = () => {
   const snap = useSnapshot(state);
