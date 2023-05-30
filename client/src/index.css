@@ -2,12 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,600;1,900&display=swap");
-@import url("https://rsms.me/inter/inter.css");
+@font-face {
+  font-family: "Nohemi";
+  src: url("./static/fonts/Nohemi-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nohemi";
+  font-weight: 900; /* Black */
+  src: url("./static/fonts/Nohemi-Black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nohemi";
+  src: url("./static/fonts/Nohemi-ExtraBold.woff") format("woff2");
+}
+@font-face {
+  font-family: "Nohemi";
+  font-weight: 400; /* Regular */
+  src: url("./static/fonts/Nohemi-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nohemi";
+  src: url("./static/fonts/Nohemi-ExtraLight.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nohemi";
+  src: url("./static/fonts/Nohemi-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nohemi";
+  font-weight: 700; /* Black */
+  src: url("./static/fonts/Nohemi-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Nohemi";
+  src: url("./static/fonts/Nohemi-Thin.woff2") format("woff2");
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer base {
+  html {
+    font-family: Nohemi, system-ui, sans-serif;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -16,15 +51,29 @@
   color-scheme: dark;
 }
 html {
-  font-family: "Inter", sans-serif;
+  font-family: nohemi;
 }
 
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: "Inter var", sans-serif;
-  }
+
+h1 {
+ 
+  font-weight: 900; /* Black */
+
+
 }
 
+h2 {
+
+
+  font-weight: 700; /* Black */
+
+}
+
+p {
+
+  font-weight: 400; /* ExtraBold */
+
+}
 .app {
   @apply relative w-full h-screen overflow-hidden;
 }
@@ -123,7 +172,7 @@ input[type="file"] {
 
 .yellow-gradient {
   background-color: #fbb034;
-background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+  background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
 }
 
 .green-pink-gradient {
