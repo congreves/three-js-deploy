@@ -1,6 +1,5 @@
 import {
   mobile,
-  backend,
   creator,
   web,
   javascript,
@@ -8,21 +7,17 @@ import {
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
-  mongodb,
   git,
   figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
   carrent,
   jobit,
   tripguide,
   threejs,
+  svea,
+  mp,
+  triggers,
 } from "../assets";
 
 export const navLinks = [
@@ -42,36 +37,23 @@ export const navLinks = [
 
 const services = [
   {
+    id: 1,
     title: "Web Developer",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    id: 2,
+    title: "React Developer",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
+    id: 3,
+    title: "UX/UI Designer",
     icon: creator,
   },
 ];
 
 const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
   {
     name: "TypeScript",
     icon: typescript,
@@ -81,20 +63,12 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
     name: "Tailwind CSS",
     icon: tailwind,
   },
   {
     name: "Node JS",
     icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
   },
   {
     name: "Three JS",
@@ -108,63 +82,72 @@ const technologies = [
     name: "figma",
     icon: figma,
   },
-  {
-    name: "docker",
-    icon: docker,
-  },
 ];
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    title: "UI Developer Intern",
+    company_name: "Made People",
+    icon: mp,
+    iconBg: "FFF4E8",
+    date: "Jan 2023 - Current",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Developing and maintaining web applications using Vue/React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Implementing responsive design and ensuring cross-browser compatibility and client needs",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
+    title: "Frontend Developer",
+    company_name: "VioVin",
+    icon: svea,
+    iconBg: "#FFF4E8",
+    date: "Mar 2022 - April 2022",
+    points: [
+      "Managed client contact and project management.",
+      "Designed & developed a web application using React.js and Figma",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+    ],
+  },
+  {
+    title: "UX/UI Designer",
+    company_name: "Try Triggers",
+    icon: triggers,
+    iconBg: "inherit",
     date: "Jan 2021 - Feb 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Co-created two new services in Workshop design and online training, which were implemented.",
+      "Collaborating with cross-functional teams including designers, product managers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Established new international partnerships with Miro.",
+      "Co-facilitation in workshops & performed various user interviews.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
+    title: "UI Designer",
+    company_name: "Svea Solar",
+    icon: svea,
+    iconBg: "#FFF4E8",
     date: "Jan 2022 - Jan 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Worked in an agile team & re- designed the utility page for B2B customers  together with stakeholders.",
+      "Created new informational arcitecture schema, content strategy, wireframes,mock-ups hi-fi prototype. ",
       "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed my skills in Figma  building a ui library.",
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    title: "Other Activites",
+    company_name: "Hyper Island / Changemaker Educations",
+    icon: svea,
+    iconBg: "#FFF4E8",
+    date: "Jan 2022 - Jan 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Student representative for the Front-End / App Development program aswell as the Digital Media Creative program at Hyper Island.",
+      "Active participation in regional panel discussions, board meetings and workshops to improve the student experience that met industry needs. ",
+      "Part of internal group working to create more inclusive design processes at the school, using an intersectional perspective",
+      "Co-created tools for the Hyper Toolbox.",
+      "Involved in creating a less biased recruitment process for new staff and students.",
     ],
   },
 ];
@@ -172,27 +155,27 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+      "Sandy makes amazing banana bread! (not that I eat bananas)",
+    name: "Ben Counsell",
+    designation: "UI Lead Developer",
+    company: "Made People",
+    image: "",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    "I loved working together with Sandy! Sandy is an awesome visual designer and has great communication. As we were working together it became apparent that she is someone that we would love to invest in as a company. Hungry, learns quick, has talent and is very adaptableleo.",
+    name: "Marvin Benno",
+    designation: "Engineering Manager",
+    company: "Svea Solar",
+    image: "https://media.licdn.com/dms/image/C5603AQG8ddVPn6QMeg/profile-displayphoto-shrink_800_800/0/1592859682105?e=1691020800&v=beta&t=Meay3Vi7U_Gqo5KuYu7fsoymyDRJ6dw4Tric1CV9keU",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    "I had the privilege to work with Sandy during a project to develop our new brand strategy. The whole team, that she was part of, did a great job in understanding our brand history and values to build upon, and Sandy was a very active part in that. The results presented was well above expectations and I would be happy to work with her again!",
+    name: "Erik Månsson",
+    designation: "CEO",
+    company: "Innoscentia",
+    image: "https://media.licdn.com/dms/image/C4E03AQHC9Z0H6Sg17g/profile-displayphoto-shrink_800_800/0/1597346939878?e=1691020800&v=beta&t=P1nwGmKxaZHMpXKsEgx0OlXe7hSodIbXJJ2ak_pRWcw",
   },
 ];
 

@@ -1,35 +1,54 @@
-import React from "react";
-import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
-import { styles } from "../styles";
+import React, { useState } from "react";
+import Tilt from "react-parallax-tilt";
 import { services } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
+import { styles } from "../styles";
+import { cardVariants, fadeIn, textVariant } from "../utils/motion";
 import SectionWrapper from "./hoc/SectionWrapper";
+import Lottie from "react-lottie";
+import animationData from "./../lottie/bloo-hat-3.json";
+import range from "lodash/range";
 
-
-const ServiceCard = ({ title, description, index, icon }) => {
+export const ServiceCard = ({ title, description, index, icon }) => {
+  const defaultOptions = {
+    loop: false,
+    autoplay: false,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
-    <Tilt className="xs:w-[16rem] w-full">
+    <Tilt className="">
       {" "}
-      <motion.div
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className="w-full green-pink-gradient p-[0.1rem] rounded-[1.25rem] shadow-card"
+      <div
       >
         <div
-          options={{ max: 45, scale: 1, speed: 450 }}
-          className="bg-tertiary rounded-[1.25rem] py-5 px-12 min-h-[17.5rem] flex justify-evenly items-center flex-col"
+          className="bg-[#EA5836] py-5  min-h-[17.5rem] flex justify-center items-center flex-col"
         >
-          {" "}
-          <img src={icon} alt={title} className="w-16 h-16 object-contain" />
-          <h3 className="text-white text-[1.25rem] font-bold text-center">
+          <Lottie options={defaultOptions} width={200} />
+
+          <h3 className="bg-inherit text-[1.25rem] font-bold text-center">
             {title}
           </h3>
         </div>
-      </motion.div>
+      </div>
     </Tilt>
   );
 };
 const About = () => {
+  const [selectedCard, setSelectedCard] = useState(false);
+ 
+  const handleOnSelect = (index) => { 
+    setSelectedCard(!selectedCard)
+   
+  }
+  const combinedServices = [
+    ...services.map((service, index) => (
+      <ServiceCard key={service.title} index={index} {...service} />
+    )),
+    ...range(10).map((_, index) => <ServiceCard key={index} />),
+  ];
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -38,7 +57,7 @@ const About = () => {
       </motion.div>
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[1rem] max-w-3xl leading-[1.8rem]"
+        className="mt-4 text-[1rem] max-w-3xl leading-[1.8rem]"
       >
         experience working with e-commerce clients such as Mateus, Stronger,
         Xlash, and more, I specialize in JavaScript frameworks like React and
@@ -48,9 +67,16 @@ const About = () => {
         to your e-commerce-focused web agency and create remarkable digital
         solutions.
       </motion.p>
-      <div className="mt-20 flex flex-wrap gap-10 ">
+      <div className="mt-20 flex overflow-auto lg:flex-wrap gap-10 ">
         {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
+          <ServiceCard
+            onClick={() => handleOnSelect(index)}
+            variants={cardVariants}
+            animate={selectedCard ? "selected" : "notSelected"}
+            key={service.title}
+            index={index}
+            {...service}
+          />
         ))}
       </div>
     </>

@@ -86,3 +86,22 @@ export const textVariant = (delay) => {
       },
     };
   };
+
+  export const cardVariants = {
+    selected: {
+      rotateY: 180,
+      scale: 1.1,
+      transition: { duration: .35 },
+      zIndex: 10,
+      boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px'
+    },
+    notSelected: i => ({
+      rotateY: i * 15,
+      scale: 1 - Math.abs(i * 0.15),
+      x: i ? i * 50 : 0,
+      opacity: 1 - Math.abs(i * .15),
+      zIndex: 10 - Math.abs(i),
+      boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px',
+      transition: { duration: .35 }
+    })
+  }

@@ -12,12 +12,13 @@ import { textVariant } from "../utils/motion";
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
-    contentStyle={{ background: "#1d1836", color: "#fff" }}
-    contentArrowStyle={{ borderRight: "7px solid #232631" }}
+    contentStyle={{ background: "#1C3CFA", color: "#fff", borderRadius: "20px",
+    padding:"20px" }}
+    contentArrowStyle={{ borderRight: "10px solid #000", }}
     date={experience.date}
-    iconStyle={{ background: experience.iconBg }}
+    iconStyle={{ background: experience.iconBg, backgroundColor: "white", color: "#000", border: "2px solid #000"}}
     icon={
-      <div className="flex justify-center items-center  w-full h-full ">
+      <div className="flex justify-center items-center  w-full h-full  filter-none">
         <img
           src={experience.icon}
           alt={experience.company_name}
@@ -26,22 +27,22 @@ const ExperienceCard = ({ experience }) => (
       </div>
     }
   >
-    <div>
-      <h3 className="text-white text-[1.5rem] font-bold ">
+    <div className="bg-[#1C3CFA]">
+      <h3 className="bg-inherit  text-[1.5rem] font-bold ">
         {experience.title}
       </h3>
-      <p
-        className="text-secondary text-[1rem] font-semibold"
+      <h4
+        className="bg-inherit text-[1rem] font- tracking-wider"
         style={{ margin: 0 }}
       >
         {experience.company_name}
-      </p>
+      </h4>
     </div>
     <ul className="mt-5 list-disc ml-5 space-y-2 ">
       {experience.points.map((point, index) => (
         <li
           key={`experience-point-${index}`}
-          className="text-white-100 text-[0.875rem] pl-1 tracking-wider"
+          className="text-[0.875rem] pl-1 tracking-wider font-medium"
         >
           {point}
         </li>
@@ -58,7 +59,7 @@ const Experience = () => {
         <h2 className={styles.sectionHeadText}>Work Experience</h2>
       </motion.div>
 
-      <div className="mt-20 flex flex-col">
+      <div className="mt-20 flex flex-col  rounded-xl">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard

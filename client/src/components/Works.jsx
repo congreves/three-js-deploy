@@ -15,9 +15,9 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div className="" variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
-        className="sm:w-[22.5rem] w-full bg-tertiary p-5 rounded-2xl"
+        className="sm:w-[22.5rem] w-full p-5 rounded-2xl bg-[#FFBB01]"
         options={{ max: 45, scale: 1, speed: 450 }}
       >
         <div className="relative w-full h-[14.375rem]">
@@ -46,8 +46,8 @@ const ProjectCard = ({
           </div>
         </div>
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[1.5rem] ">{name}</h3>
-          <p className="mt-2 text-secondary text-[0.875rem]">{description}</p>
+          <h3 className=" font-bold text-[1.5rem] ">{name}</h3>
+          <p className="mt-2 text-[0.875rem]">{description}</p>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
@@ -75,7 +75,7 @@ const Works = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[1rem] max-w-3xl leading-[1.875rem]"
+          className="mt-3 text-[1rem] max-w-3xl leading-[1.875rem]"
         >
           Real world examples of my skills and experience.
         </motion.p>
