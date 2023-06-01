@@ -17,7 +17,7 @@ const ProjectCard = ({
   return (
     <motion.div className="" variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
-        className="sm:w-[22.5rem] w-full p-5 rounded-2xl bg-[#FFBB01]"
+        className="sm:w-[22.5rem] w-full p-5 rounded-2xl card bg-[#FFF4E8]"
         options={{ max: 45, scale: 1, speed: 450 }}
       >
         <div className="relative w-full h-[14.375rem]">
@@ -59,6 +59,9 @@ const ProjectCard = ({
             </p>
           ))}
         </div>
+        <div className="custom-button-container">
+          <button onClick={() => window.open("https://dkmg-mvp.netlify.app/")} className="custom-button"> Go to Site</button>
+          </div>
       </Tilt>
     </motion.div>
   );

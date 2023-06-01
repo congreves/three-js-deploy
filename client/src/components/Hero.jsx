@@ -2,13 +2,16 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { StarsCanvas } from "./canvas";
 import { me } from "../assets";
+import { useState } from "react";
 // import { ComputersCanvas } from "./canvas";
 const Hero = () => {
+  const [changeText, setChangeText] = useState(false);
+
   return (
     <section className="relative w-full mx-auto">
       <div className="grid-halves mt-16 top-[8rem] ">
       <div
-        className={`${styles.paddingX} mt-20 pb-8 inset-0  max-w-7xl m-auto flex flex-row items-start gap-5 `}
+        className={`${styles.paddingX} mt-20 pb-8 inset-0  max-w-7xl m-auto flex-row items-start gap-5 hidden lg:flex `}
       >
         <div>
           <h1 className={`${styles.heroHeadText} `}>
@@ -27,7 +30,7 @@ const Hero = () => {
       <div  className="flex flex-col justify-center items-center p-4 border-t-2 border-black md:max-lg:border-l-2 md:max-lg:border-black bg-[url('https://cdn.dribbble.com/users/1433291/screenshots/15078415/media/d10c93b8e835c6cfcd473a980cdb6203.jpg')]">
         <motion.img drag  dragElastic={0.1}src={me} alt="me" width={400}/>
         <div className="custom-button-container">
-          <button className="custom-button">Hey I'm Sandy!I've been sitting here all day, move me around 👆🏾</button>
+          <button onClick={() => setChangeText(!changeText)} className="custom-button">{ !changeText ? 'Hey Im Sandy! Ive been sitting here all day, move me around 👆🏾' : 'Not me the photo silly the photo up there 👆🏾👆🏾👆🏾 '}</button>
           </div>
       </div>
       </div>
@@ -46,7 +49,6 @@ const Hero = () => {
           </div>
         </a>
       </div>
-      <StarsCanvas/>
     </section>
   );
 };

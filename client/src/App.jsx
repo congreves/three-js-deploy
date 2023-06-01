@@ -12,6 +12,7 @@ import {
   Navbar,
   Experience,
   Carousel,
+  Feedbacks,
 } from "./components";
 
 function App() {
@@ -22,12 +23,12 @@ function App() {
           <Navbar />
         </div>
         <Hero />
-        <Carousel />
         <About />
+        <Carousel />
         <Experience />
         <Tech />
         <Works />
-        {/* <Feedbacks /> */}
+        <Feedbacks />
         {/* <Home />
         <Canvas />
         <Customizer /> */}

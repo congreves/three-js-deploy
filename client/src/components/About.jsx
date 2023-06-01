@@ -8,6 +8,7 @@ import SectionWrapper from "./hoc/SectionWrapper";
 import Lottie from "react-lottie";
 import animationData from "./../lottie/bloo-hat-3.json";
 import range from "lodash/range";
+import Carousel from "./Carousel";
 
 export const ServiceCard = ({ title, description, index, icon }) => {
   const defaultOptions = {
@@ -39,46 +40,25 @@ export const ServiceCard = ({ title, description, index, icon }) => {
 const About = () => {
   const [selectedCard, setSelectedCard] = useState(false);
  
-  const handleOnSelect = (index) => { 
-    setSelectedCard(!selectedCard)
-   
-  }
-  const combinedServices = [
-    ...services.map((service, index) => (
-      <ServiceCard key={service.title} index={index} {...service} />
-    )),
-    ...range(10).map((_, index) => <ServiceCard key={index} />),
-  ];
+
   return (
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview</h2>
+        <h2 className={styles.sectionHeadText}>About moi</h2>
       </motion.div>
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-[1rem] max-w-3xl leading-[1.8rem]"
       >
-        experience working with e-commerce clients such as Mateus, Stronger,
+        I experience working with e-commerce clients such as Mateus, Stronger,
         Xlash, and more, I specialize in JavaScript frameworks like React and
         Vue. I also have expertise in headless e-commerce platforms like CENTRA
         and integrations like Findify. My diverse background includes UX/UI
         design and international experiences. Let's discuss how I can contribute
-        to your e-commerce-focused web agency and create remarkable digital
+        to your e-commerce-focused web agency and create exisiting digital
         solutions.
       </motion.p>
-      <div className="mt-20 flex overflow-auto lg:flex-wrap gap-10 ">
-        {services.map((service, index) => (
-          <ServiceCard
-            onClick={() => handleOnSelect(index)}
-            variants={cardVariants}
-            animate={selectedCard ? "selected" : "notSelected"}
-            key={service.title}
-            index={index}
-            {...service}
-          />
-        ))}
-      </div>
     </>
   );
 };

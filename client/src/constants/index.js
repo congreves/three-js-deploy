@@ -181,30 +181,30 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Mateus",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of eremaining essentially unchanged. It was popularised",
     tags: [
       {
-        name: "react",
+        name: "tailwindcss",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "vue",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "centra",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: "file:///Users/sandycongreve/Desktop/Screenshot%202023-06-01%20at%2011.19.37.png",
     source_code_link: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "Food Restrictions App",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "A web application that allows users to search for recipes based on their dietary restrictions and preferences.",
     tags: [
       {
         name: "react",
@@ -219,29 +219,29 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: "https://camo.githubusercontent.com/9c06e5b943c9ef1e9028f696ca5c247db304f6cc101fe5f58b27c16c5e3e20a6/68747470733a2f2f692e6962622e636f2f6e50784e7848682f53637265656e73686f742d323032332d30312d32362d61742d30392d35352d32322e706e67",
     source_code_link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "VioVin",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Business site for wine distribution company.",
     tags: [
       {
         name: "nextjs",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "styled-components",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "figma",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: "https://i.ibb.co/59Mr9Pq/3-Chateau-Bellefontaine-blanc.jpg",
+    source_code_link: "https://dkmg-mvp.netlify.app/",
   },
 ];
 
