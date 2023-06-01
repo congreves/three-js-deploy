@@ -7,7 +7,9 @@ import {
   headContentAnimation,
   slideAnimation,
 } from "../config/motion";
+
 import { Chat, CustomButton } from "../components";
+
 
 const Home = () => {
   const snap = useSnapshot(state);

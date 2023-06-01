@@ -19,7 +19,7 @@ import {
   CustomButton,
   FilePicker,
   Tab,
-} from "../components";
+} from "../components/ShirtCustomizer";
 
 const Customizer = () => {
   const snap = useSnapshot(state);
