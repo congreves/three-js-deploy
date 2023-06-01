@@ -5,7 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 import {
   About,
   Contact,
-  Tech,
   Works,
   StarsCanvas,
   Hero,
@@ -26,7 +25,6 @@ function App() {
         <About />
         <Carousel />
         <Experience />
-        <Tech />
         <Works />
         <Feedbacks />
         {/* <Home />
