@@ -13,16 +13,24 @@ import {
   Carousel,
   Feedbacks,
 } from "./components";
+import { useRef } from "react";
 
 function App() {
+  const aboutSectionRef = useRef(null);
+
+  const scrollToAboutSection = () => {
+    if (aboutSectionRef.current) {
+      scroll.scrollTo(aboutSectionRef.current.offsetTop);
+    }
+  };
   return (
     <BrowserRouter>
       <div className='relative z-0 font-nohemi'>
         <div className=''>
           <Navbar />
         </div>
-        <Hero />
-        <About />
+        <Hero scrollToAboutSection={scrollToAboutSection}/>
+        <About aboutSectionRef={aboutSectionRef}/>
         <Experience />
         <Works />
 

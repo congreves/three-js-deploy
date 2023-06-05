@@ -37,7 +37,7 @@ export const ServiceCard = ({ title, description, index, icon }) => {
     </Tilt>
   );
 };
-const About = () => {
+const About = ({aboutSectionRef}) => {
   const [selectedCard, setSelectedCard] = useState(false);
  
   const handleOnSelect = (index) => { 
@@ -52,7 +52,7 @@ const About = () => {
   ]; 
 
   return (
-    <>
+    <div ref={aboutSectionRef}>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>About moi</h2>
@@ -81,7 +81,7 @@ const About = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
