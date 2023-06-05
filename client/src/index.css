@@ -349,6 +349,39 @@ box-shadow: 8px 8px 0px #000000;
   transform: translateY(4px);
    box-shadow: 1px 2px 0px 0px #000;
 }
+.small-custom-button-container {
+  background-position: 8px 53%;
+  background-size: 1.75rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2.7rem;
+  bottom: 3rem;
+  right: 0;
+}
+.small-custom-button {
+  color: #000;
+  background-color: #fff;
+  background-position: 8px 59%;
+  background-repeat: no-repeat;
+  background-size: 2.25rem;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 0.5rem 0.5rem;
+  font-size: 0.675rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  display: inline-block;
+  box-shadow: 2px 2px 1px 1px rgb(0,0,0);
+;}
+.small-custom-button:hover{
+  transform: translateY(-2px);
+   box-shadow: 5px 5px 1px 1px rgb(0,0,0);
+}
+.small-custom-button:active{
+  transform: translateY(4px);
+   box-shadow: 1px 2px 0px 0px #000;
+}
+
 .shadow {
   box-shadow: 2px 2px 1px 1px rgb(0,0,0);
 
@@ -387,4 +420,25 @@ Smaller sized components
 */
 box-shadow: 2px 2px 0px #000000;
 border-radius: 9px;
+}
+
+.speech-bubble {
+	position: absolute;
+	background: #FFBB01;
+	border-radius: .4em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #FFBB01;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
 }

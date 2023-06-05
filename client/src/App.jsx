@@ -23,16 +23,16 @@ function App() {
         </div>
         <Hero />
         <About />
-        <Carousel />
         <Experience />
         <Works />
-        <Feedbacks />
+
         {/* <Home />
         <Canvas />
         <Customizer /> */}
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />
+          <Carousel />
         </div>
       </div>
     </BrowserRouter>

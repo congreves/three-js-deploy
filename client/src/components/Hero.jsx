@@ -30,7 +30,7 @@ const Hero = () => {
       <div  className="flex flex-col justify-center items-center p-4 border-t-2 border-black md:max-lg:border-l-2 md:max-lg:border-black bg-[url('https://cdn.dribbble.com/users/1433291/screenshots/15078415/media/d10c93b8e835c6cfcd473a980cdb6203.jpg')]">
         <motion.img drag  dragElastic={0.1}src={me} alt="me" width={400}/>
         <div className="custom-button-container">
-          <button onClick={() => setChangeText(!changeText)} className="custom-button">{ !changeText ? 'Hey Im Sandy! Ive been sitting here all day, move me around 👆🏾' : 'Not me the photo silly the photo up there 👆🏾👆🏾👆🏾 '}</button>
+          <button onClick={() => setChangeText(!changeText)} className="custom-button">{ !changeText ? 'Hey Im Sandy! Ive been sitting here all day, move me around 👆🏾' : 'Not the button silly ME up there 👆🏾👆🏾👆🏾 '}</button>
           </div>
       </div>
       </div>

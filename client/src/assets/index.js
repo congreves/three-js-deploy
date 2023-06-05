@@ -7,16 +7,12 @@ import logoShirt from "./logo-tshirt.png";
 import stylishShirt from "./stylish-tshirt.png";
 import logo from "./logo.svg";
 
-import creator from "./creator.png";
 import mobile from "./mobile.png";
-import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
-import herobg from "./herobg.png";
 
 import css from "./tech/css.png";
-import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
@@ -27,17 +23,32 @@ import reactjs from "./tech/reactjs.png";
 
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+
 
 import triggers from "./company/triggers.png";
 import mp from "./company/mp.svg";
 import svea from "./company/svea.png";
-
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
 import me from "./ME.png";
 import sandy from "./sandytext.png";
+
+import bild2 from "./myphotos/bild2.png";
+import bild1 from "./myphotos/billd1.png";
+import bild3 from "./myphotos/bild3.jpeg";
+import bild4 from "./myphotos/bild4.png";
+import bild5 from "./myphotos/bild5.jpeg";
+import bild6 from "./myphotos/bild6.png";
+import bild7 from "./myphotos/bild7.jpeg";
+import bild8 from "./myphotos/bild8.jpeg";
+import bild9 from "./myphotos/bild9.jpeg";
+import bild10 from "./myphotos/bild10.jpeg";
+import bild11 from "./myphotos/bild11.png";
+import bild12 from "./myphotos/bild12.jpeg";
+import bild13 from "./myphotos/bild13.jpeg";
+import bild14 from "./myphotos/bild14.png";
+import bild15 from "./myphotos/bild15.jpeg";
+import bild16 from "./myphotos/bild7.png";
+
+
 
 export {
   triggers,
@@ -51,19 +62,12 @@ export {
   download,
   logoShirt,
   stylishShirt,
-  creator,
-  carrent,
   github,
-  jobit,
-  herobg,
-  web,
-  tripguide,
   menu,
   logo,
   mobile,
   close,
   css,
-  docker,
   figma,
   git,
   html,
@@ -72,5 +76,20 @@ export {
   reactjs,
   tailwind,
   typescript,
-  threejs,
+  bild1,
+  bild2,
+  bild3,
+  bild4,
+  bild5,
+  bild6,
+  bild7,
+  bild8,
+  bild9,
+  bild10,
+  bild11,
+  bild12,
+  bild13,
+  bild14,
+  bild15,
+  bild16
 };

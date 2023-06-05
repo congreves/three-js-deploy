@@ -40,6 +40,16 @@ export const ServiceCard = ({ title, description, index, icon }) => {
 const About = () => {
   const [selectedCard, setSelectedCard] = useState(false);
  
+  const handleOnSelect = (index) => { 
+    setSelectedCard(!selectedCard)
+   
+  }
+  const combinedServices = [
+    ...services.map((service, index) => (
+      <ServiceCard key={service.title} index={index} {...service} />
+    )),
+    ...range(10).map((_, index) => <ServiceCard key={index} />),
+  ]; 
 
   return (
     <>
@@ -59,6 +69,18 @@ const About = () => {
         to your e-commerce-focused web agency and create exisiting digital
         solutions.
       </motion.p>
+      <div className="mt-20 flex overflow-auto lg:flex-wrap gap-10 ">
+        {services.map((service, index) => (
+          <ServiceCard
+            onClick={() => handleOnSelect(index)}
+            variants={cardVariants}
+            animate={selectedCard ? "selected" : "notSelected"}
+            key={service.title}
+            index={index}
+            {...service}
+          />
+        ))}
+      </div>
     </>
   );
 };

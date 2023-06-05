@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { services } from "../constants";
-import { ServiceCard } from "./About";
-const cards = [1, 2, 3, 4, 5];
+import { images } from "../constants";
+
+
 const cardVariants = {
   selected: {
     rotateY: 180,
@@ -75,22 +75,27 @@ const Carousel = () => {
       onMouseUp={() => setDragStart((prev) => ({ ...prev, isDragging: false }))}
       onMouseMove={handleMouseMove}
     >
-      <div className="max-w-full whitespace-nowrap overflow-x-auto perspective-150 scrollbar-none" ref={containerRef}>
-        {services.map((service, index) => (
+      <div
+        className="max-w-full whitespace-nowrap overflow-x-auto perspective-150 scrollbar-none"
+        ref={containerRef}
+      >
+        {images.map((image, index) => (
           <motion.div
-            className="relative inline-block h-80 w-80 bg-white m-8 rounded-lg cursor-pointer"
-            key={service.id}
+            className="relative inline-block h-80 w-80 bg-black m-8 rounded-lg cursor-pointer"
+            key={image.id}
             ref={(el) => cardRefs.current.push(el)}
-            onMouseUp={(e) => handleCardMouseUp(e, service.id)}
+            onMouseUp={(e) => handleCardMouseUp(e, image.id)}
             variants={cardVariants}
-            animate={selectedCard === service ? "selected" : "notSelected"}
+            animate={selectedCard === image ? "selected" : "notSelected"}
             custom={selectedCard ? selectedCard - service.id : 0}
           >
-          <ServiceCard
-            index={index}
-            {...service}
-          />
-     
+            <img
+              className="object-contain  max-h-full "
+              width="320"
+              height="320"
+              src={image.src}
+              alt={image.title}
+            />
           </motion.div>
         ))}
       </div>
