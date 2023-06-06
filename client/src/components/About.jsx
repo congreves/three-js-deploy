@@ -1,145 +1,96 @@
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
-import React, { useState } from "react";
 import Tilt from "react-parallax-tilt";
-import { projects } from "../constants";
+import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { cardVariants, fadeIn, textVariant } from "../utils/motion";
+import { github } from "../assets";
 import SectionWrapper from "./hoc/SectionWrapper";
-// import Lottie from "react-lottie";
-import animationData from "./../lottie/bloo-hat-3.json";
-import range from "lodash/range";
+import { projects } from "../constants";
+import { fadeIn, textVariant } from "../utils/motion";
 
-export const ServiceCard = ({
-  company,
-  description,
-  id,
-  tags,
-  image,
-  source_code_link,
-}) => {
-  const defaultOptions = {
-    loop: false,
-    autoplay: false,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-  const [isExpanded, setIsExpanded] = useState(false);
+// const ProjectCard = ({
+//   index,
+//   name,
+//   description,
+//   tags,
+//   image,
+//   source_code_link,
+// }) => {
+//   return (
+//     <motion.div className=" h-[35rem]" variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+//       <Tilt
+//         className="sm:w-[22.5rem] w-full p-5 rounded-2xl card bg-[#FFF4E8]"
+//         options={{ max: 45, scale: 1, speed: 450 }}
+//       >
+//         <div className="relative w-full h-[14.375rem]">
+//           <img src={image} alt={name} className="w-full h-full object-cover" />
+//           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+//             <div
+//               onClick={() => window.open(source_code_link, "_blank")}
+//               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+//             >
+//               <img
+//                 src={github}
+//                 alt="github"
+//                 className="w-1/2 h-1/2 object-contain"
+//               />
+//             </div>
+//             <div
+//               onClick={() => window.open(source_code_link, "_blank")}
+//               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+//             >
+//               <img
+//                 src={github}
+//                 alt="github"
+//                 className="w-1/2 h-1/2 object-contain"
+//               />
+//             </div>
+//           </div>
+//         </div>
+//         <div className="mt-5">
+//           <h3 className=" font-bold text-[1.5rem] ">{name}</h3>
+//           <p className="mt-2 text-[0.875rem]">{description}</p>
+//         </div>
+//         <div className="mt-4 flex flex-wrap gap-2">
+//           {tags.map((tag) => (
+//             <p
+//               key={`${name}-${tag.name}`}
+//               className={`text-[14px] ${tag.color}`}
+//             >
+//               #{tag.name}
+//             </p>
+//           ))}
+//         </div>
+//         <div className="custom-button-container">
+//           <button onClick={() => window.open("https://dkmg-mvp.netlify.app/")} className="custom-button"> Go to Site</button>
+//           </div>
+//       </Tilt>
+//     </motion.div>
+//   );
+// };
+
+const About = () => {
   return (
-   <AnimatePresence onExitComplete>
-      {isExpanded ? (
-        <motion.div
-          key={id}
-          onClick={() => setIsExpanded(!isExpanded)}
-          transition={{ layout: { duration: 1, type: "spring" } }}
-          layout="position"
-          className={` 
-    expanded-card`}
-        >
-          <Tilt className="">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, type: "spring" }}
-                exit={{ opacity: 0 }}
-              layout="position"
-              >
-                <motion.h3
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1, type: "spring" }}
-                  exit={{ opacity: 0, type: "spring" }}
-                  layout="position"
-                  className="expanded-card-h"
-                >
-                  {company}
-                </motion.h3>
-                {/* <motion.img layout="position" src={image} width="50%" height="100px" /> */}
-                <p className="leading-relaxed tracking-wide">{description}</p>
-                <p>
-                  {tags.map((tag) => (
-                    <span key={tag.name} className="text-white font-thin">
-                      {" "}
-                      {tag.name}{" "}
-                    </span>
-                  ))}
-                </p>
-              </motion.div>
-          </Tilt>
-        </motion.div>
-      ) : (
-        <motion.div
-          key={id}
-          onClick={() => setIsExpanded(!isExpanded)}
-          transition={{ layout: { duration: 1, type: "spring" } }}
-          layout={true}
-          className={`bg-[#EA5836] rounded-lg p-4 min-h-[17.5rem] min-w-[15rem] flex justify-center items-center flex-col gap-2  
-           normal-card`}
-        >
-          <Tilt className="">
-     
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.2, type: "spring" }}
-                exit={{ opacity: 0, type: "spring" }}
-                layout={true}
-              >
-                <motion.h3
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1 }}
-                  exit={{ opacity: 0 }}
-                  layout="position"
-                  className="bg-inherit text-[1.25rem] font-bold text-center"
-                >
-                  {company}
-                </motion.h3>
-              </motion.div>
-          </Tilt>
-        </motion.div>
-      )}
-      </AnimatePresence>
-  );
-};
-
-
-const About = ({ aboutSectionRef }) => {
-
-
-  return (
-    <div ref={aboutSectionRef}>
+    <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>About moi</h2>
+        <p className={`${styles.sectionSubText}`}>Introduction</p>
+        <h2 className={`${styles.sectionHeadText}`}>About Moi</h2>
       </motion.div>
+
+      <div className="w-full flex">
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-[1rem] max-w-3xl leading-[1.8rem]"
+        className="text-[1rem] max-w-3xl leading-[1.8rem]"
       >
         I experience working with e-commerce clients such as Mateus, Stronger,
         Xlash, and more, I specialize in JavaScript frameworks like React and
         Vue. I also have expertise in headless e-commerce platforms like CENTRA
         and integrations like Findify. My diverse background includes UX/UI
         design and international experiences. Let's discuss how I can contribute
-        to your e-commerce-focused web agency and create exisiting digital
+        to your company and create exisiting digital
         solutions.
       </motion.p>
-      <div className="flex overflow-scroll gap-10 ">
-        <LayoutGroup>
-          {projects.map((project, index) => (
-            <ServiceCard
-              layoutId="expandable-card"
-              variants={cardVariants}
-              key={project.company}
-              {...project}
-            />
-          ))}
-        </LayoutGroup>
-      </div>
-    </div>
+          </div>
+    </>
   );
 };
 
-export default SectionWrapper(About, "about");
+export default SectionWrapper(About, "");

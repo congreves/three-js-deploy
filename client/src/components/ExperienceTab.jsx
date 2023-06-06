@@ -17,7 +17,7 @@ const TabContent = ({ activeTab, experience }) => {
           onClick={() => setOpen(!open)}
           className="small-custom-button text-xs"
         >
-          What they say 🤘
+          What they say about moi 🤘
         </button>
            {open ? <PopUp experience={experience} setOpen={setOpen} /> : null}
       </div>

@@ -30,8 +30,8 @@ function App() {
         </div>
         <Hero scrollToAboutSection={scrollToAboutSection}/>
         <About aboutSectionRef={aboutSectionRef}/>
-        <Experience />
         <Works />
+        <Experience />
         {/* <Home />
         <Canvas />
         <Customizer /> */}

@@ -172,7 +172,7 @@ input[type="file"] {
 
 .hash-span {
   margin-top: -100px;
-  padding-bottom: 100px;
+  padding-bottom: 4rem;
   display: block;
 }
 /* canvas- styles */
@@ -266,12 +266,22 @@ input[type="file"] {
 
 .card {
   /* background-color: #E88152; */
-  position: relative;
   border-radius: 20px;
+  transform: translateY(-2px);
   filter: drop-shadow(8px 8px 0px #000);
   padding: 20px;
   border: 4px solid #000;
+  
 }
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 1px 1px rgb(0, 0, 0);
+}
+.card:active {
+  transform: translateY(4px);
+  box-shadow: 1px 2px 0px 0px #000;
+}
+
 .grid-halves {
   width: 100%;
   grid-column-gap: 0px;
@@ -350,11 +360,9 @@ Medium sized components (32px)
 .small-custom-button-container {
   background-position: 8px 53%;
   background-size: 1.75rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.5rem;
-  padding-left: 2.7rem;
   bottom: 3rem;
   right: 0;
+
 }
 .small-custom-button {
   color: #000;
@@ -398,8 +406,11 @@ Medium sized components (32px)
   background: black;
 }
 
-
-
+.speech-bubble {
+  position: absolute;
+  background: #ffbb01;
+  border-radius: 0.4em;
+}
 
 .speech-bubble:after {
   content: "";
@@ -431,6 +442,7 @@ Medium sized components (32px)
   top: 0;
   left: 0;
   bottom: 0;
+  margin-bottom: 350px;
   width: 100%;
   height: 100%;
   z-index: 12;
