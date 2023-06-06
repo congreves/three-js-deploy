@@ -1,16 +1,22 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import React, { useState } from "react";
 import Tilt from "react-parallax-tilt";
-import { services } from "../constants";
+import { projects } from "../constants";
 import { styles } from "../styles";
 import { cardVariants, fadeIn, textVariant } from "../utils/motion";
 import SectionWrapper from "./hoc/SectionWrapper";
-import Lottie from "react-lottie";
+// import Lottie from "react-lottie";
 import animationData from "./../lottie/bloo-hat-3.json";
 import range from "lodash/range";
-import Carousel from "./Carousel";
 
-export const ServiceCard = ({ title, description, index, icon }) => {
+export const ServiceCard = ({
+  company,
+  description,
+  id,
+  tags,
+  image,
+  source_code_link,
+}) => {
   const defaultOptions = {
     loop: false,
     autoplay: false,
@@ -19,37 +25,88 @@ export const ServiceCard = ({ title, description, index, icon }) => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
-    <Tilt className="">
-      {" "}
-      <div
-      >
-        <div
-          className="bg-[#EA5836] py-5  min-h-[17.5rem] flex justify-center items-center flex-col"
+   <AnimatePresence onExitComplete>
+      {isExpanded ? (
+        <motion.div
+          key={id}
+          onClick={() => setIsExpanded(!isExpanded)}
+          transition={{ layout: { duration: 1, type: "spring" } }}
+          layout="position"
+          className={` 
+    expanded-card`}
         >
-          <Lottie options={defaultOptions} width={200} />
-
-          <h3 className="bg-inherit text-[1.25rem] font-bold text-center">
-            {title}
-          </h3>
-        </div>
-      </div>
-    </Tilt>
+          <Tilt className="">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, type: "spring" }}
+                exit={{ opacity: 0 }}
+              layout="position"
+              >
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, type: "spring" }}
+                  exit={{ opacity: 0, type: "spring" }}
+                  layout="position"
+                  className="expanded-card-h"
+                >
+                  {company}
+                </motion.h3>
+                {/* <motion.img layout="position" src={image} width="50%" height="100px" /> */}
+                <p className="leading-relaxed tracking-wide">{description}</p>
+                <p>
+                  {tags.map((tag) => (
+                    <span key={tag.name} className="text-white font-thin">
+                      {" "}
+                      {tag.name}{" "}
+                    </span>
+                  ))}
+                </p>
+              </motion.div>
+          </Tilt>
+        </motion.div>
+      ) : (
+        <motion.div
+          key={id}
+          onClick={() => setIsExpanded(!isExpanded)}
+          transition={{ layout: { duration: 1, type: "spring" } }}
+          layout={true}
+          className={`bg-[#EA5836] rounded-lg p-4 min-h-[17.5rem] min-w-[15rem] flex justify-center items-center flex-col gap-2  
+           normal-card`}
+        >
+          <Tilt className="">
+     
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2, type: "spring" }}
+                exit={{ opacity: 0, type: "spring" }}
+                layout={true}
+              >
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  exit={{ opacity: 0 }}
+                  layout="position"
+                  className="bg-inherit text-[1.25rem] font-bold text-center"
+                >
+                  {company}
+                </motion.h3>
+              </motion.div>
+          </Tilt>
+        </motion.div>
+      )}
+      </AnimatePresence>
   );
 };
-const About = ({aboutSectionRef}) => {
-  const [selectedCard, setSelectedCard] = useState(false);
- 
-  const handleOnSelect = (index) => { 
-    setSelectedCard(!selectedCard)
-   
-  }
-  const combinedServices = [
-    ...services.map((service, index) => (
-      <ServiceCard key={service.title} index={index} {...service} />
-    )),
-    ...range(10).map((_, index) => <ServiceCard key={index} />),
-  ]; 
+
+
+const About = ({ aboutSectionRef }) => {
+
 
   return (
     <div ref={aboutSectionRef}>
@@ -69,17 +126,17 @@ const About = ({aboutSectionRef}) => {
         to your e-commerce-focused web agency and create exisiting digital
         solutions.
       </motion.p>
-      <div className="mt-20 flex overflow-auto lg:flex-wrap gap-10 ">
-        {services.map((service, index) => (
-          <ServiceCard
-            onClick={() => handleOnSelect(index)}
-            variants={cardVariants}
-            animate={selectedCard ? "selected" : "notSelected"}
-            key={service.title}
-            index={index}
-            {...service}
-          />
-        ))}
+      <div className="flex overflow-scroll gap-10 ">
+        <LayoutGroup>
+          {projects.map((project, index) => (
+            <ServiceCard
+              layoutId="expandable-card"
+              variants={cardVariants}
+              key={project.company}
+              {...project}
+            />
+          ))}
+        </LayoutGroup>
       </div>
     </div>
   );

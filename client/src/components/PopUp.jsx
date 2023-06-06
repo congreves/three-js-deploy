@@ -2,7 +2,7 @@ import React from "react";
 import { fadeIn } from "../utils/motion";
 import { motion } from "framer-motion";
 
-const PopUp = ({ experience, index, setOpen }) => {
+const PopUp = ({ experience, setOpen }) => {
   return (
     <div className="bg-[#FFBB01] text-black bottom-[5rem]  left-[-1rem] absolute shadow rounded-xl px-4 py-8 z-10 w-full">
       <div className="flex justify-between">

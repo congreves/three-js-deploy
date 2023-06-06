@@ -11,7 +11,6 @@ import {
   Navbar,
   Experience,
   Carousel,
-  Feedbacks,
 } from "./components";
 import { useRef } from "react";
 
@@ -33,7 +32,6 @@ function App() {
         <About aboutSectionRef={aboutSectionRef}/>
         <Experience />
         <Works />
-
         {/* <Home />
         <Canvas />
         <Customizer /> */}

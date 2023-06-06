@@ -7,7 +7,6 @@ import logoShirt from "./logo-tshirt.png";
 import stylishShirt from "./stylish-tshirt.png";
 import logo from "./logo.svg";
 
-import mobile from "./mobile.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
@@ -17,13 +16,20 @@ import figma from "./tech/figma.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
-
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
-
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
-
+import storybook from "./tech/storybook.png";
+import storyblok from "./tech/storyblok.png";
+import vue from "./tech/vue.png";
+import centra from "./tech/centra.png";
+import squarespace from "./tech/squarespace.png";
+import wordpress from "./tech/wordpress.png";
+import webflow from "./tech/webflow.png";
+import adobe from "./tech/adobe.png";
+import styled from "./tech/sc.png";
+import netlify from "./tech/netlify.png";
 
 import triggers from "./company/triggers.png";
 import mp from "./company/mp.svg";
@@ -48,9 +54,17 @@ import bild14 from "./myphotos/bild14.png";
 import bild15 from "./myphotos/bild15.jpeg";
 import bild16 from "./myphotos/bild7.png";
 
-
-
 export {
+  styled,
+  netlify,
+  adobe,
+  webflow,
+  wordpress,
+  squarespace,
+  centra,
+  storyblok,
+  vue,
+  storybook,
   triggers,
   mp,
   svea,
@@ -65,7 +79,6 @@ export {
   github,
   menu,
   logo,
-  mobile,
   close,
   css,
   figma,
@@ -91,5 +104,5 @@ export {
   bild13,
   bild14,
   bild15,
-  bild16
+  bild16,
 };
