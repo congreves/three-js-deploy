@@ -5,36 +5,40 @@ import { BrowserRouter } from "react-router-dom";
 import {
   About,
   Contact,
-  Tech,
   Works,
   StarsCanvas,
   Hero,
   Navbar,
   Experience,
   Carousel,
-  Feedbacks,
 } from "./components";
+import { useRef } from "react";
 
 function App() {
+  const aboutSectionRef = useRef(null);
+
+  const scrollToAboutSection = () => {
+    if (aboutSectionRef.current) {
+      scroll.scrollTo(aboutSectionRef.current.offsetTop);
+    }
+  };
   return (
     <BrowserRouter>
       <div className='relative z-0 font-nohemi'>
         <div className=''>
           <Navbar />
         </div>
-        <Hero />
-        <About />
-        <Carousel />
-        <Experience />
-        <Tech />
+        <Hero scrollToAboutSection={scrollToAboutSection}/>
+        <About aboutSectionRef={aboutSectionRef}/>
         <Works />
-        <Feedbacks />
+        <Experience />
         {/* <Home />
         <Canvas />
         <Customizer /> */}
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />
+          <Carousel />
         </div>
       </div>
     </BrowserRouter>

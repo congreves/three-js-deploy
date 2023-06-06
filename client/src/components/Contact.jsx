@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
 import SectionWrapper from "./hoc/SectionWrapper";
 import { slideIn } from "../utils/motion";
+import { a } from "maath/dist/objectSpread2-284232a6.esm";
+import { i } from "maath/dist/index-43782085.esm";
 
 // UctaQY5oJDAwTZTId
 // template_58ufs6h
@@ -50,6 +51,8 @@ const Contact = () => {
       alert("Message failed to send.")
     })
 }
+
+
   return (
     <div
       className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
@@ -106,12 +109,12 @@ const Contact = () => {
           </button>
         </form>
       </motion.div>
-      <motion.div
+      {/* <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[34.375rem] h-[21.875rem] "
       >
         <EarthCanvas />
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };

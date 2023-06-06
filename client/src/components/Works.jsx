@@ -1,95 +1,138 @@
+import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
+import React, { useState } from "react";
 import Tilt from "react-parallax-tilt";
-import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { github } from "../assets";
-import SectionWrapper from "./hoc/SectionWrapper";
 import { projects } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
+import { styles } from "../styles";
+import { cardVariants, fadeIn, textVariant } from "../utils/motion";
+import SectionWrapper from "./hoc/SectionWrapper";
 
-const ProjectCard = ({
-  index,
-  name,
+export const ProjectCard = ({
+  company,
   description,
+  id,
   tags,
   image,
   source_code_link,
 }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
-    <motion.div className="" variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        className="sm:w-[22.5rem] w-full p-5 rounded-2xl card bg-[#FFF4E8]"
-        options={{ max: 45, scale: 1, speed: 450 }}
-      >
-        <div className="relative w-full h-[14.375rem]">
-          <img src={image} alt={name} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+    <>
+      {isExpanded ? (
+        <motion.div
+          key={id}
+          onClick={() => setIsExpanded(!isExpanded)}
+          transition={{ layout: { duration: 1, type: "spring" } }}
+          layout="position"
+          className={` 
+    expanded-card`}
+        >
+          <AnimatePresence onExitComplete>
+            <Tilt className="">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, type: "spring" }}
+                exit={{ opacity: 0 }}
+                layout="position"
+              >
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, type: "spring" }}
+                  exit={{ opacity: 0, type: "spring" }}
+                  layout="position"
+                  className="expanded-card-h"
+                >
+                  {company}
+                </motion.h3>
+                <p className="leading-relaxed tracking-wide">{description}</p>
+                <p>
+                  {tags.map((tag) => (
+                    <span key={tag.name} className="text-white font-thin">
+                      {" "}
+                      {tag.name}{" "}
+                    </span>
+                  ))}
+                </p>
+              </motion.div>
+            </Tilt>
+          </AnimatePresence>
+        </motion.div>
+      ) : (
+        <AnimatePresence onExitComplete>
+          <Tilt>
+            <motion.div
+              key={id}
+              onClick={() => setIsExpanded(!isExpanded)}
+              transition={{ layout: { duration: 1, type: "spring" } }}
+              layout="position"
+              className={`card sm:w-[22.5rem] w-full p-5 rounded-2xl card bg-[#EA5836] min-h-[17.5rem] min-w-[15rem] flex justify-center items-center flex-col gap-2  
+           normal-card`}
             >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
-            </div>
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="mt-5">
-          <h3 className=" font-bold text-[1.5rem] ">{name}</h3>
-          <p className="mt-2 text-[0.875rem]">{description}</p>
-        </div>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
-            </p>
-          ))}
-        </div>
-        <div className="custom-button-container">
-          <button onClick={() => window.open("https://dkmg-mvp.netlify.app/")} className="custom-button"> Go to Site</button>
-          </div>
-      </Tilt>
-    </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2, type: "spring" }}
+                exit={{ opacity: 0, type: "spring" }}
+                layout="position"
+              >
+                <img
+                  src={image}
+                  alt={company}
+                  width="100"
+                  height="50"
+                  className="rounded-xl"
+                />
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  exit={{ opacity: 0 }}
+                  layout="position"
+                  className="bg-inherit text-[1.25rem] font-bold text-center"
+                >
+                  {company}
+                </motion.h3>
+              </motion.div>
+            </motion.div>
+          </Tilt>
+        </AnimatePresence>
+      )}
+    </>
   );
 };
 
-const Works = () => {
+const Works = ({ aboutSectionRef }) => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects</h2>
-      </motion.div>
-
-      <div className="w-full flex">
+      <motion.div
+        ref={aboutSectionRef}
+        variants={textVariant()}
+        className="flex flex-col gap-2 mb-4"
+      >
+        <p className={styles.sectionSubText}>Work</p>
+        <h2 className={styles.sectionHeadText}>Projects</h2>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-[1rem] max-w-3xl leading-[1.875rem]"
+          className="text-[1rem] max-w-3xl leading-[1.8rem]"
         >
-          Real world examples of my skills and experience.
+          Some projects of my skills
         </motion.p>
-          </div>
-        <div className="mt-20 flex flex-wrap gap-7">
+      </motion.div>
+      <div className="flex overflow-scroll gap-8 ">
+        <LayoutGroup>
           {projects.map((project, index) => (
-            <ProjectCard key={`project-${index}`} index={index} {...project} />
+            <ProjectCard
+              layoutId="expandable-card"
+              variants={cardVariants}
+              key={project.company}
+              {...project}
+            />
           ))}
+        </LayoutGroup>
       </div>
     </>
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "works");
