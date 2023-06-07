@@ -66,8 +66,8 @@ export const ProjectCard = ({
               onClick={() => setIsExpanded(!isExpanded)}
               transition={{ layout: { duration: 1, type: "spring" } }}
               layout="position"
-              className={`card sm:w-[22.5rem] w-full p-5 rounded-2xl card bg-[#EA5836] min-h-[17.5rem] min-w-[15rem] flex justify-center items-center flex-col gap-2  
-           normal-card`}
+              className={`h-[17rem] w-[17rem] card
+           `}
             >
               <motion.div
                 initial={{ opacity: 0 }}
@@ -119,12 +119,10 @@ const Works = ({ aboutSectionRef }) => {
           Some projects of my skills
         </motion.p>
       </motion.div>
-      <div className="flex overflow-scroll gap-8 ">
+      <div className="card-list ">
         <LayoutGroup>
           {projects.map((project, index) => (
             <ProjectCard
-              layoutId="expandable-card"
-              variants={cardVariants}
               key={project.company}
               {...project}
             />
