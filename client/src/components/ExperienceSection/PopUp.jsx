@@ -1,5 +1,5 @@
 import React from "react";
-import { fadeIn } from "../utils/motion";
+import { fadeIn } from "../../utils/motion";
 import { motion } from "framer-motion";
 
 const PopUp = ({ experience, setOpen }) => {

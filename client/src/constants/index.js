@@ -1,4 +1,3 @@
-import { a } from "maath/dist/objectSpread2-284232a6.esm";
 import {
   centra,
   storyblok,
@@ -31,6 +30,9 @@ import {
   wordpress,
   adobe,
   netlify,
+  ben,
+  marvin,
+  nathalie,
 } from "../assets";
 
 export const navLinks = [
@@ -62,7 +64,7 @@ const experiences = [
     name: "Ben Counsell",
     designation: "UI Lead Developer",
     company: "Made People",
-    image: mp,
+    image: ben,
     technologies: [
       {
         name: "Centra",
@@ -109,7 +111,7 @@ const experiences = [
     name: "Nathalie Panossian",
     designation: "Owner",
     company: "VioVin",
-    image: svea,
+    image: nathalie,
     technologies: [
       {
         name: "React JS",
@@ -192,7 +194,7 @@ const experiences = [
     name: "Marvin Benno",
     designation: "Engineering Manager",
     company: "Svea Solar",
-    image: svea,
+    image: marvin,
     technologies: [
       {
         name: "Figma",

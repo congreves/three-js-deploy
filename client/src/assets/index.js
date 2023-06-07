@@ -53,8 +53,14 @@ import bild13 from "./myphotos/bild13.jpeg";
 import bild14 from "./myphotos/bild14.png";
 import bild15 from "./myphotos/bild15.jpeg";
 import bild16 from "./myphotos/bild7.png";
+import ben from "./company/ben.jpeg";
+import marvin from "./company/marvin.jpeg";
+import nathalie from "./company/nathalie.jpeg";
 
 export {
+  ben,
+  marvin,
+  nathalie,
   styled,
   netlify,
   adobe,

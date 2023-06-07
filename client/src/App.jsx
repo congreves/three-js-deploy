@@ -5,7 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import {
   About,
   Contact,
-  Works,
+  ProjectHeader,
+  ProjectList,
   StarsCanvas,
   Hero,
   Navbar,
@@ -13,6 +14,7 @@ import {
   Carousel,
 } from "./components";
 import { useRef } from "react";
+
 
 function App() {
   const aboutSectionRef = useRef(null);
@@ -24,13 +26,14 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <div className='relative z-0 font-nohemi'>
-        <div className=''>
+      <div className="relative z-0 font-nohemi">
+        <div className="">
           <Navbar />
         </div>
-        <Hero scrollToAboutSection={scrollToAboutSection}/>
-        <About aboutSectionRef={aboutSectionRef}/>
-        <Works />
+        <Hero scrollToAboutSection={scrollToAboutSection} />
+        <About aboutSectionRef={aboutSectionRef} />
+        <ProjectHeader />
+        <ProjectList />
         <Experience />
         {/* <Home />
         <Canvas />

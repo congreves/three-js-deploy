@@ -3,7 +3,8 @@ import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
 import Experience from './ExperienceSection/Experience';
-import Works from './ProjectSection/Works';
+import ProjectList from './ProjectSection/ProjectList';
+import ProjectHeader from './ProjectSection/ProjectHeader';
 import Contact from './Contact';
 import Carousel from './Carousel';
 
@@ -12,7 +13,8 @@ export  {
   Navbar,
   About,
   Experience,
-  Works,
+  ProjectList,
+  ProjectHeader,
   Contact,
   StarsCanvas,
   Carousel

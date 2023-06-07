@@ -60,7 +60,7 @@ const Contact = () => {
         className="flex-[0.75] bg-[#1C3CFA] p-8 rounded-2xl"
       >
         <p className={`${styles.sectionSubText} text-[#FFF4E8]`}>Get in touch</p>
-        <h3 className={`${styles.sectionHeadText} text-[#FFF4E8]`}>Contact.</h3>
+        <h3 className={`${styles.sectionHeadText} + text-[#FFF4E8]`}>Contact.</h3>
         <form
           ref={formRef}
           onSubmit={handleSubmit}

@@ -447,7 +447,7 @@ Medium sized components (32px)
   overflow: scroll;
   gap: 2rem;
   height: 100%;
-  padding: 2rem 0 2rem 0;
+  padding: 0.5rem 0rem 1rem 1rem;
 }
 .card-list::-webkit-scrollbar {
   display: none;

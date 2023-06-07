@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import PopUp from "../PopUp";
+import PopUp from "./PopUp";
 
 
 const TabContent = ({ activeTab, experience }) => {
