@@ -68,3 +68,6 @@ export const headContainerAnimation = {
   animate: { x: 0, opacity: 1, transition: { ...transition, delay: 0 } },
   exit: { x: -100, opacity: 0, transition: { ...transition, delay: 0 } },
 };
+
+export const openSpring = { type: "spring", stiffness: 200, damping: 30 };
+export const closeSpring = { type: "spring", stiffness: 300, damping: 35 };

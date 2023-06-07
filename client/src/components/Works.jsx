@@ -15,18 +15,19 @@ export const ProjectCard = ({
   source_code_link,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  
   return (
     <>
       {isExpanded ? (
         <motion.div
-          key={id}
-          onClick={() => setIsExpanded(!isExpanded)}
-          transition={{ layout: { duration: 1, type: "spring" } }}
-          layout="position"
-          className={` 
-    expanded-card`}
-        >
-          <AnimatePresence onExitComplete>
+            key={id}
+            onClick={() => setIsExpanded(!isExpanded)}
+            transition={{ layout: { duration: 1, type: "spring" } }}
+            layout="position"
+            className={`
+            expanded-card`}
+          >
+            <AnimatePresence onExitComplete>
             <Tilt className="">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -56,8 +57,8 @@ export const ProjectCard = ({
                 </p>
               </motion.div>
             </Tilt>
-          </AnimatePresence>
-        </motion.div>
+        </AnimatePresence>
+          </motion.div>
       ) : (
         <AnimatePresence onExitComplete>
           <Tilt>
@@ -66,8 +67,8 @@ export const ProjectCard = ({
               onClick={() => setIsExpanded(!isExpanded)}
               transition={{ layout: { duration: 1, type: "spring" } }}
               layout="position"
-              className={`card sm:w-[22.5rem] w-full p-5 rounded-2xl card bg-[#EA5836] min-h-[17.5rem] min-w-[15rem] flex justify-center items-center flex-col gap-2  
-           normal-card`}
+              className={`h-[17rem] w-[17rem] card
+           `}
             >
               <motion.div
                 initial={{ opacity: 0 }}
@@ -76,12 +77,18 @@ export const ProjectCard = ({
                 exit={{ opacity: 0, type: "spring" }}
                 layout="position"
               >
-                <img
+                <motion.img
                   src={image}
                   alt={company}
                   width="100"
                   height="50"
-                  className="rounded-xl"
+                  className="card-image"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.2, type: "spring" }}
+                  exit={{ opacity: 0, type: "spring" }}
+                  layout="position"
+                  
                 />
                 <motion.h3
                   initial={{ opacity: 0 }}
@@ -89,7 +96,7 @@ export const ProjectCard = ({
                   transition={{ duration: 1 }}
                   exit={{ opacity: 0 }}
                   layout="position"
-                  className="bg-inherit text-[1.25rem] font-bold text-center"
+                  className="bg-inherit text-[1.25rem] text-center"
                 >
                   {company}
                 </motion.h3>
@@ -103,6 +110,7 @@ export const ProjectCard = ({
 };
 
 const Works = ({ aboutSectionRef }) => {
+
   return (
     <>
       <motion.div
@@ -119,18 +127,11 @@ const Works = ({ aboutSectionRef }) => {
           Some projects of my skills
         </motion.p>
       </motion.div>
-      <div className="flex overflow-scroll gap-8 ">
-        <LayoutGroup>
+      <motion.div layout layoutRoot className="card-list ">
           {projects.map((project, index) => (
-            <ProjectCard
-              layoutId="expandable-card"
-              variants={cardVariants}
-              key={project.company}
-              {...project}
-            />
+            <ProjectCard key={project.company} {...project} />
           ))}
-        </LayoutGroup>
-      </div>
+      </motion.div>
     </>
   );
 };
