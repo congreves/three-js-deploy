@@ -15,37 +15,46 @@ export const ProjectCard = ({
   source_code_link,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  
+    function disableScroll() {
+      setIsExpanded(!isExpanded)
+   }
   return (
     <>
-      {isExpanded ? (
+      <AnimatePresence onExitComplete>
         <motion.div
-            key={id}
-            onClick={() => setIsExpanded(!isExpanded)}
-            transition={{ layout: { duration: 1, type: "spring" } }}
-            layout="position"
-            className={`
-            expanded-card`}
-          >
-            <AnimatePresence onExitComplete>
-            <Tilt className="">
+          key={id}
+          onClick={() => disableScroll()}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1}}
+          transition={{
+            layout: {
+              duration: 1,
+              type: "spring",
+            },
+          }}
+          exit={{ opacity: 0 }}
+          layout
+          className={`${isExpanded ? "expanded-card" : "card"}`}
+        >
+          <Tilt className="">
+            <motion.h4
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, type: "spring" }}
+              exit={{ opacity: 0, type: "spring" }}
+              layout="position"
+              className="expanded-card-h"
+            >
+              {company}
+            </motion.h4>
+            {isExpanded && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, type: "spring" }}
-                exit={{ opacity: 0 }}
+                exit={{ opacity: 0, type: "spring" }}
                 layout="position"
               >
-                <motion.h3
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1, type: "spring" }}
-                  exit={{ opacity: 0, type: "spring" }}
-                  layout="position"
-                  className="expanded-card-h"
-                >
-                  {company}
-                </motion.h3>
                 <p className="leading-relaxed tracking-wide">{description}</p>
                 <p>
                   {tags.map((tag) => (
@@ -56,61 +65,15 @@ export const ProjectCard = ({
                   ))}
                 </p>
               </motion.div>
-            </Tilt>
-        </AnimatePresence>
-          </motion.div>
-      ) : (
-        <AnimatePresence onExitComplete>
-          <Tilt>
-            <motion.div
-              key={id}
-              onClick={() => setIsExpanded(!isExpanded)}
-              transition={{ layout: { duration: 1, type: "spring" } }}
-              layout="position"
-              className={`h-[17rem] w-[17rem] card
-           `}
-            >
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.2, type: "spring" }}
-                exit={{ opacity: 0, type: "spring" }}
-                layout="position"
-              >
-                <motion.img
-                  src={image}
-                  alt={company}
-                  width="100"
-                  height="50"
-                  className="card-image"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.2, type: "spring" }}
-                  exit={{ opacity: 0, type: "spring" }}
-                  layout="position"
-                  
-                />
-                <motion.h3
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1 }}
-                  exit={{ opacity: 0 }}
-                  layout="position"
-                  className="bg-inherit text-[1.25rem] text-center"
-                >
-                  {company}
-                </motion.h3>
-              </motion.div>
-            </motion.div>
+            )}
           </Tilt>
-        </AnimatePresence>
-      )}
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 };
 
 const Works = ({ aboutSectionRef }) => {
-
   return (
     <>
       <motion.div
@@ -127,11 +90,13 @@ const Works = ({ aboutSectionRef }) => {
           Some projects of my skills
         </motion.p>
       </motion.div>
-      <motion.div layout layoutRoot className="card-list ">
+      <AnimatePresence onExitComplete>
+        <motion.div layout layoutScroll className="card-list ">
           {projects.map((project, index) => (
             <ProjectCard key={project.company} {...project} />
           ))}
-      </motion.div>
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 };

@@ -280,7 +280,7 @@ const projects = [
   },
   {
     id: 2,
-    company: "Food Restrictions App",
+    company: "Food App",
     description:
       "A web application that allows users to search for recipes based on their dietary restrictions and preferences.",
     tags: [
