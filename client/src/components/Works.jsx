@@ -34,7 +34,7 @@ export const ProjectCard = ({
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, type: "spring" }}
                 exit={{ opacity: 0 }}
-                layout={true}
+                layout="position"
               >
                 <motion.h3
                   initial={{ opacity: 0 }}
@@ -83,6 +83,11 @@ export const ProjectCard = ({
                   width="100"
                   height="50"
                   className="card-image"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.2, type: "spring" }}
+                  exit={{ opacity: 0, type: "spring" }}
+                  layout="position"
                   
                 />
                 <motion.h3
@@ -91,7 +96,7 @@ export const ProjectCard = ({
                   transition={{ duration: 1 }}
                   exit={{ opacity: 0 }}
                   layout="position"
-                  className="bg-inherit text-[1.25rem] font-bold text-center"
+                  className="bg-inherit text-[1.25rem] text-center"
                 >
                   {company}
                 </motion.h3>
@@ -122,13 +127,11 @@ const Works = ({ aboutSectionRef }) => {
           Some projects of my skills
         </motion.p>
       </motion.div>
-      <div className="card-list ">
-        <LayoutGroup>
+      <motion.div layout layoutRoot className="card-list ">
           {projects.map((project, index) => (
             <ProjectCard key={project.company} {...project} />
           ))}
-        </LayoutGroup>
-      </div>
+      </motion.div>
     </>
   );
 };
