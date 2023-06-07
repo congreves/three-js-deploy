@@ -2,8 +2,9 @@ import { StarsCanvas } from './canvas';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
-import Experience from './Experience';
-import Works from './Works';
+import Experience from './ExperienceSection/Experience';
+import ProjectList from './ProjectSection/ProjectList';
+import ProjectHeader from './ProjectSection/ProjectHeader';
 import Contact from './Contact';
 import Carousel from './Carousel';
 
@@ -12,7 +13,8 @@ export  {
   Navbar,
   About,
   Experience,
-  Works,
+  ProjectList,
+  ProjectHeader,
   Contact,
   StarsCanvas,
   Carousel

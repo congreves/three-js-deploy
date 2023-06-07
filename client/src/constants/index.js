@@ -1,4 +1,3 @@
-import { a } from "maath/dist/objectSpread2-284232a6.esm";
 import {
   centra,
   storyblok,
@@ -31,6 +30,11 @@ import {
   wordpress,
   adobe,
   netlify,
+  ben,
+  marvin,
+  nathalie,
+  viovin,
+  inno,
 } from "../assets";
 
 export const navLinks = [
@@ -54,7 +58,7 @@ const experiences = [
     title: "UI Developer Intern",
     company_name: "Made People",
     location: "Stockholm, Sweden",
-    icon: "mp",
+    icon: mp,
     iconBg: "#FFF4E8",
     bg: "#000",
     date: "Jan 2023 - Current",
@@ -62,7 +66,7 @@ const experiences = [
     name: "Ben Counsell",
     designation: "UI Lead Developer",
     company: "Made People",
-    image: mp,
+    image: ben,
     technologies: [
       {
         name: "Centra",
@@ -101,7 +105,7 @@ const experiences = [
     title: "Frontend Developer",
     company_name: "VioVin",
     location: "Stockholm, Sweden",
-    icon: "svea",
+    icon: viovin,
     iconBg: "#FFF4E8",
     bg: "#1C3CFA",
     date: "Mar 2022 - April 2022",
@@ -109,7 +113,7 @@ const experiences = [
     name: "Nathalie Panossian",
     designation: "Owner",
     company: "VioVin",
-    image: svea,
+    image: nathalie,
     technologies: [
       {
         name: "React JS",
@@ -140,10 +144,10 @@ const experiences = [
     title: "UX/UI Designer",
     company_name: "Try Triggers",
     location: "Barcelona, Spain",
-    icon: "triggers",
+    icon: triggers,
     iconBg: "inherit",
     bg: "#1C3CFA",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jan 2021 - July 2021",
     testimonial: "Sandy makes amazing banana bread! (not that I eat bananas)",
     name: "Paloma Almodóvar",
     designation: "Content Manager",
@@ -183,16 +187,16 @@ const experiences = [
     title: "UI Designer",
     company_name: "Svea Solar",
     location: "Stockholm, Sweden",
-    icon: "svea",
+    icon: svea,
     iconBg: "#FFF4E8",
     bg: "#1C3CFA",
-    date: "Jan 2022 - Jan 2023",
+    date: "Aug 2020 - Feb 2021",
     testimonial:
       "I loved working together with Sandy! Sandy is an awesome visual designer and has great communication. As we were working together it became apparent that she is someone that we would love to invest in as a company. Hungry, learns quick, has talent and is very adaptableleo.",
     name: "Marvin Benno",
     designation: "Engineering Manager",
     company: "Svea Solar",
-    image: svea,
+    image: marvin,
     technologies: [
       {
         name: "Figma",
@@ -215,8 +219,8 @@ const experiences = [
     title: "Other Activities",
     company_name: "Hyper Island / Changemaker Educations",
     location: "Karlskrona / Stockholm, Sweden",
-    icon: "svea",
-    iconBg: "#FFF4E8",
+    icon: inno,
+    iconBg: "#fff",
     bg: "#1C3CFA",
     date: "Jan 2022 - Jan 2023",
     testimonial:
@@ -280,7 +284,7 @@ const projects = [
   },
   {
     id: 2,
-    company: "Food Restrictions App",
+    company: "Food App",
     description:
       "A web application that allows users to search for recipes based on their dietary restrictions and preferences.",
     tags: [

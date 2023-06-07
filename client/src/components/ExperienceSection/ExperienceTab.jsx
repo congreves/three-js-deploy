@@ -26,14 +26,6 @@ const TabContent = ({ activeTab, experience }) => {
   } else if (activeTab === 2) {
     return (
       <ul className="mt-4 list-disc ml-2 space-y-2 text-wrap">
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-[0.875rem] pl-1 tracking-wider font-medium  "
-          >
-            {point}
-          </li>
-        ))}
         <div className="flex gap-4 mb-4 flex-wrap">
           {technologies.map((tech) => (
             <img
@@ -45,6 +37,14 @@ const TabContent = ({ activeTab, experience }) => {
             />
           ))}
         </div>
+        {experience.points.map((point, index) => (
+          <li
+            key={`experience-point-${index}`}
+            className="text-[0.875rem] pl-1 tracking-wider font-medium  "
+          >
+            {point}
+          </li>
+        ))}
       </ul>
     );
     return <div>No content to display</div>;
@@ -63,7 +63,7 @@ function ExperienceTab({ experience }) {
             <button
               onClick={() => setActiveTab(tab.id)}
               className={`${
-                activeTab === tab.id ? "" : "hover:text-white/60"
+                activeTab === tab.id ? "" : "hover:text-white/60 underline"
               } relative rounded-full px-2 py-1.5 text-sm font-medium text-white transition focus-visible:outline-2`}
               style={{
                 WebkitTapHighlightColor: "transparent",

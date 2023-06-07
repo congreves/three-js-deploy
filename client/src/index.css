@@ -76,7 +76,6 @@ h4 {
   font-weight: 500; /* Medium */
   letter-spacing: 0.05em;
   font-size: 1rem;
-  
 }
 
 p {
@@ -264,8 +263,6 @@ input[type="file"] {
   }
 }
 
-
-
 .grid-halves {
   width: 100%;
   grid-column-gap: 0px;
@@ -314,13 +311,12 @@ Medium sized components (32px)
   background-size: 1.75rem;
   padding-top: 0.4rem;
   padding-bottom: 0.5rem;
-  padding-left: 2.7rem;
   bottom: 3rem;
   right: 0;
 }
 .custom-button {
   color: #000;
-  background-color: #fff;
+  background-color: #FFF4E8;
   background-position: 8px 59%;
   background-repeat: no-repeat;
   background-size: 2.25rem;
@@ -346,11 +342,11 @@ Medium sized components (32px)
   background-size: 1.75rem;
   bottom: 3rem;
   right: 0;
-
 }
+
 .small-custom-button {
   color: #000;
-  background-color: #fff;
+  background-color: #FFF4E8;
   background-position: 8px 59%;
   background-repeat: no-repeat;
   background-size: 2.25rem;
@@ -411,21 +407,19 @@ Medium sized components (32px)
   margin-bottom: -20px;
 }
 
-
-
 .expanded-card {
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   z-index: 12;
   display: grid;
   place-items: center;
-  padding: 2rem;
   gap: 2;
-  background-color: #EA5836;
+  background-color: #ea5836;
+  filter: drop-shadow(4px 4px 0px #000);
+  border: 2px solid #000;
+  overflow-y: hidden;
 }
 .expanded-card-h {
   font-size: 1.5rem;
@@ -433,8 +427,16 @@ Medium sized components (32px)
   padding: 2rem;
   place-items: end center;
 }
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 1px 1px rgb(0, 0, 0);
+}
+.card:active {
+  transform: translateY(4px);
+  box-shadow: 1px 2px 0px 0px #000;
+}
 
-.expandable-card p {
+.expanded-card p {
   max-width: fit-content;
   padding: 2rem;
   place-self: start center;
@@ -445,22 +447,23 @@ Medium sized components (32px)
   overflow: scroll;
   gap: 2rem;
   height: 100%;
+  padding: 0.5rem 0rem 1rem 1rem;
 }
 .card-list::-webkit-scrollbar {
   display: none;
 }
 
 .card {
-  background-color: #EA5836; 
+  background-color: #ea5836;
   border-radius: 20px;
   transform: translateY(-2px);
   filter: drop-shadow(4px 4px 0px #000);
-  padding: 20px;
+  padding: 0.5rem;
   border: 2px solid #000;
   display: grid;
   place-items: center;
-  margin: 20px;
-  width: 100%;
+  height: 15rem;
+  width: calc( 100vw * ( 2 / 4) );
   
 }
 .card:hover {
