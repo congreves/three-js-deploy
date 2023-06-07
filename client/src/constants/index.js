@@ -145,7 +145,7 @@ const experiences = [
     icon: "triggers",
     iconBg: "inherit",
     bg: "#1C3CFA",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jan 2021 - July 2021",
     testimonial: "Sandy makes amazing banana bread! (not that I eat bananas)",
     name: "Paloma Almodóvar",
     designation: "Content Manager",
@@ -188,7 +188,7 @@ const experiences = [
     icon: "svea",
     iconBg: "#FFF4E8",
     bg: "#1C3CFA",
-    date: "Jan 2022 - Jan 2023",
+    date: "Aug 2020 - Feb 2021",
     testimonial:
       "I loved working together with Sandy! Sandy is an awesome visual designer and has great communication. As we were working together it became apparent that she is someone that we would love to invest in as a company. Hungry, learns quick, has talent and is very adaptableleo.",
     name: "Marvin Benno",

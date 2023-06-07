@@ -38,17 +38,17 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Menu */}
-        <div className="sm:hidden flex flex-1 justify-end items-center gap-2 bg-[#FFF4E8] z-14">
+        <div className="sm:hidden flex flex-1 justify-end items-center gap-2 z-14">
           <svg
             src={toggle ? close : menu}
             alt="menu"
-            className="w-6 h-6 cursor-pointer object-contain"
+            className="w-6 h-6 cursor-pointer object-contain "
             onClick={() => setToggle(!toggle)}
           />
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 black-gradient bg-[#FFF4E8] absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-14 rounded-xl`}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4  ">
               {navLinks.map((link) => (

@@ -13,12 +13,12 @@ const ProjectHeader = ({aboutSectionRef}) => {
         className="flex flex-col gap-2 "
       >
         <p className={styles.sectionSubText}>Work</p>
-        <h2 className={styles.sectionHeadText}>Projects</h2>
+        <h2 className={styles.sectionHeadText}>Projects 🧑🏾‍🎨</h2>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
           className="text-[1rem] max-w-3xl leading-[1.8rem]"
         >
-          Some projects of my skills
+          Some projects to demonstarte my skills!
         </motion.p>
       </motion.div>
     </>

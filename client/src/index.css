@@ -317,7 +317,7 @@ Medium sized components (32px)
 }
 .custom-button {
   color: #000;
-  background-color: #fff;
+  background-color: #FFF4E8;
   background-position: 8px 59%;
   background-repeat: no-repeat;
   background-size: 2.25rem;
@@ -344,9 +344,10 @@ Medium sized components (32px)
   bottom: 3rem;
   right: 0;
 }
+
 .small-custom-button {
   color: #000;
-  background-color: #fff;
+  background-color: #FFF4E8;
   background-position: 8px 59%;
   background-repeat: no-repeat;
   background-size: 2.25rem;

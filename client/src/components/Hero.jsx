@@ -40,8 +40,8 @@ const Hero = ({ scrollToAboutSection }) => {
               className="custom-button"
             >
               {!changeText
-                ? "Hey Im Sandy! Ive been sitting here all day, move me around 👆🏾"
-                : "Not the button silly ME up there 👆🏾👆🏾👆🏾 "}
+                ? "Hey I'm Sandy! I've been sitting here all day, move me around 👆🏾"
+                : "ME Up there 👆🏾👆🏾👆🏾 "}
             </button>
           </div>
         </div>

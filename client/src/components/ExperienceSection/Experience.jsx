@@ -15,7 +15,7 @@ const ExperienceCard = ({ experience, index }) => {
     <VerticalTimelineElement
       contentStyle={{
         background: experience.bg,
-        color: "#fff",
+        color: "#FFF4E8",
         borderRadius: "20px",
         padding: "20px",
       }}
@@ -47,10 +47,10 @@ const Experience = () => {
     <>
   
 
-      <div className="mt-10 flex flex-col rounded-xl">
-      <motion.div variants={textVariant()}>
+      <div className="mt-10 flex flex-col ">
+      <motion.div variants={textVariant()} className="mb-4">
         <p className={styles.sectionSubText}>What I have done so far</p>
-        <h2 className={styles.sectionHeadText}>Work Experience</h2>
+        <h2 className={styles.sectionHeadText}>Curriculum Vitae 👣</h2>
       </motion.div>
         <VerticalTimeline>
           {experiences.map((experience, index) => (
