@@ -15,25 +15,26 @@ export const ProjectCard = ({
   source_code_link,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  
   return (
     <>
       {isExpanded ? (
         <motion.div
-          key={id}
-          onClick={() => setIsExpanded(!isExpanded)}
-          transition={{ layout: { duration: 1, type: "spring" } }}
-          layout="position"
-          className={` 
-    expanded-card`}
-        >
-          <AnimatePresence onExitComplete>
+            key={id}
+            onClick={() => setIsExpanded(!isExpanded)}
+            transition={{ layout: { duration: 1, type: "spring" } }}
+            layout="position"
+            className={`
+            expanded-card`}
+          >
+            <AnimatePresence onExitComplete>
             <Tilt className="">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, type: "spring" }}
                 exit={{ opacity: 0 }}
-                layout="position"
+                layout={true}
               >
                 <motion.h3
                   initial={{ opacity: 0 }}
@@ -56,8 +57,8 @@ export const ProjectCard = ({
                 </p>
               </motion.div>
             </Tilt>
-          </AnimatePresence>
-        </motion.div>
+        </AnimatePresence>
+          </motion.div>
       ) : (
         <AnimatePresence onExitComplete>
           <Tilt>
@@ -76,12 +77,13 @@ export const ProjectCard = ({
                 exit={{ opacity: 0, type: "spring" }}
                 layout="position"
               >
-                <img
+                <motion.img
                   src={image}
                   alt={company}
                   width="100"
                   height="50"
-                  className="rounded-xl"
+                  className="card-image"
+                  
                 />
                 <motion.h3
                   initial={{ opacity: 0 }}
@@ -103,6 +105,7 @@ export const ProjectCard = ({
 };
 
 const Works = ({ aboutSectionRef }) => {
+
   return (
     <>
       <motion.div
@@ -122,10 +125,7 @@ const Works = ({ aboutSectionRef }) => {
       <div className="card-list ">
         <LayoutGroup>
           {projects.map((project, index) => (
-            <ProjectCard
-              key={project.company}
-              {...project}
-            />
+            <ProjectCard key={project.company} {...project} />
           ))}
         </LayoutGroup>
       </div>

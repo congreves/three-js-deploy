@@ -13,14 +13,14 @@ const TabContent = ({ activeTab, experience }) => {
           {experience.company_name}
         </h4>
         <div className="small-custom-button-container">
-        <button
-          onClick={() => setOpen(!open)}
-          className="small-custom-button text-xs"
-        >
-          What they say about moi 🤘
-        </button>
-           {open ? <PopUp experience={experience} setOpen={setOpen} /> : null}
-      </div>
+          <button
+            onClick={() => setOpen(!open)}
+            className="small-custom-button text-xs"
+          >
+            What they say about moi 🤘
+          </button>
+          {open ? <PopUp experience={experience} setOpen={setOpen} /> : null}
+        </div>
       </div>
     );
   } else if (activeTab === 2) {
@@ -34,7 +34,7 @@ const TabContent = ({ activeTab, experience }) => {
             {point}
           </li>
         ))}
-             <div className="flex gap-4 mb-4 flex-wrap">
+        <div className="flex gap-4 mb-4 flex-wrap">
           {technologies.map((tech) => (
             <img
               className="bg-white p-0.5 rounded-full object-contain"
@@ -59,9 +59,8 @@ function ExperienceTab({ experience }) {
     <div className="flex gap-2 flex-col">
       <div className="flex space-x-1">
         {tabs.map((tab) => (
-          <div>
+          <div key={tab.id}>
             <button
-              key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`${
                 activeTab === tab.id ? "" : "hover:text-white/60"
