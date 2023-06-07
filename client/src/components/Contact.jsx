@@ -1,12 +1,10 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-
 import { styles } from "../styles";
 import SectionWrapper from "./hoc/SectionWrapper";
 import { slideIn } from "../utils/motion";
-import { a } from "maath/dist/objectSpread2-284232a6.esm";
-import { i } from "maath/dist/index-43782085.esm";
+
 
 // UctaQY5oJDAwTZTId
 // template_58ufs6h

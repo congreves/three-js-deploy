@@ -1,10 +1,10 @@
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import React, { useState } from "react";
 import Tilt from "react-parallax-tilt";
-import { projects } from "../constants";
-import { styles } from "../styles";
-import { cardVariants, fadeIn, textVariant } from "../utils/motion";
-import SectionWrapper from "./hoc/SectionWrapper";
+import { projects } from "../../constants";
+import { styles } from "../../styles";
+import { cardVariants, fadeIn, textVariant } from "../../utils/motion";
+
 
 export const ProjectCard = ({
   company,
@@ -101,4 +101,4 @@ const Works = ({ aboutSectionRef }) => {
   );
 };
 
-export default SectionWrapper(Works, "works");
+export default Works;
