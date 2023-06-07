@@ -72,7 +72,7 @@ const About = () => {
     <>
       <motion.div variants={textVariant()} className="mb-4">
         <p className={`${styles.sectionSubText}`}>Introduction</p>
-        <h2 className={`${styles.sectionHeadText}`}>About Moi 💃</h2>
+        <h2 className={`${styles.sectionHeadText}`}>💃 About Moi </h2>
       </motion.div>
 
       <motion.div variants={fadeIn("", "", 0.1, 1)} className="w-full flex">

@@ -19,20 +19,21 @@ const ExperienceCard = ({ experience, index }) => {
         borderRadius: "20px",
         padding: "20px",
       }}
-      contentArrowStyle={{ borderRight: "10px solid #000" }}
+      contentArrowStyle={{ borderRight: `5px solid ${experience.bg}` }}
       date={experience.date}
       iconStyle={{
         background: experience.iconBg,
-        backgroundColor: "#000",
+        backgroundColor: "#fff",
         color: "#000",
-        border: "2px solid #000",
+        width: "50px",
+        height: "50px",
       }}
       icon={
         <div className="flex justify-center items-center  w-full h-full  filter-none">
           <img
-            src={experience.image}
+            src={experience.icon}
             alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain"
+            className="p-2 object-contain"
           />
         </div>
       }
@@ -49,10 +50,10 @@ const Experience = () => {
 
       <div className="mt-10 flex flex-col ">
       <motion.div variants={textVariant()} className="mb-4">
-        <p className={styles.sectionSubText}>What I have done so far</p>
-        <h2 className={styles.sectionHeadText}>Curriculum Vitae 👣</h2>
+        <p className={styles.sectionSubText}>my experience so far</p>
+        <h2 className={styles.sectionHeadText}>👣 Curriculum Vitae </h2>
       </motion.div>
-        <VerticalTimeline>
+        <VerticalTimeline  >
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={experience.title}

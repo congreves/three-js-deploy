@@ -56,11 +56,15 @@ import bild16 from "./myphotos/bild7.png";
 import ben from "./company/ben.jpeg";
 import marvin from "./company/marvin.jpeg";
 import nathalie from "./company/nathalie.jpeg";
+import viovin from "./company/viovin.png";
+import inno from "./company/inno.png";
 
 export {
   ben,
   marvin,
   nathalie,
+  viovin,
+  inno,
   styled,
   netlify,
   adobe,

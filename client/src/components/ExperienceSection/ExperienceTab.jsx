@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import PopUp from "./PopUp";
 
-
 const TabContent = ({ activeTab, experience }) => {
   const technologies = experience.technologies;
   const [open, setOpen] = useState(false);
@@ -27,14 +26,6 @@ const TabContent = ({ activeTab, experience }) => {
   } else if (activeTab === 2) {
     return (
       <ul className="mt-4 list-disc ml-2 space-y-2 text-wrap">
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-[0.875rem] pl-1 tracking-wider font-medium  "
-          >
-            {point}
-          </li>
-        ))}
         <div className="flex gap-4 mb-4 flex-wrap">
           {technologies.map((tech) => (
             <img
@@ -46,6 +37,14 @@ const TabContent = ({ activeTab, experience }) => {
             />
           ))}
         </div>
+        {experience.points.map((point, index) => (
+          <li
+            key={`experience-point-${index}`}
+            className="text-[0.875rem] pl-1 tracking-wider font-medium  "
+          >
+            {point}
+          </li>
+        ))}
       </ul>
     );
     return <div>No content to display</div>;
