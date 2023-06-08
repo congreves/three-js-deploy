@@ -38,10 +38,19 @@ const PopUp = ({ experience, setOpen }) => {
           </motion.button>
         </motion.div>
 
-        <div className="mt-1">
-          <p className="tracking-wider text-[1rem]">{experience.testimonial}</p>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, type: "spring" }}
+          exit={{ opacity: 0, type: "spring" }}
+          layout="position"
+          className="mt-1"
+        >
+          <motion.p layout="position" className="tracking-wider text-[1rem]">
+            {experience.testimonial}
+          </motion.p>
 
-          <div className="mt-7 flex justify-between items-center gap-1">
+          <motion.div className="mt-7 flex justify-between items-center gap-1">
             <div className="flex-1 flex flex-col">
               <p className=" font-medium text-[0.875rem]">
                 <span className="">@</span> {experience.name}
@@ -55,8 +64,8 @@ const PopUp = ({ experience, setOpen }) => {
               alt={`feedback-by-${experience.name}`}
               className="w-10 h-10 rounded-full object-cover"
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </motion.div>
     </AnimatePresence>
   );

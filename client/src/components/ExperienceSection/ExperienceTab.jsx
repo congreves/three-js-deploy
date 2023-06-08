@@ -8,11 +8,11 @@ const TabContent = ({ activeTab, experience }) => {
   if (activeTab === 1) {
     return (
       <div className="flex flex-col gap-4">
-        <h3 className="bg-inherit mt-4  ">{experience.title}</h3>
-        <h4 className="bg-inherit tracking-wider" style={{ margin: 0 }}>
+        <h3 className="bg-inherit ">{experience.title}</h3>
+        {/* <p className="bg-inherit tracking-wider" >
           {experience.company_name}
-        </h4>
-        <div className="small-custom-button-container">
+        </p> */}
+        <motion.div className="small-custom-button-container">
           <button
             onClick={() => setOpen(!open)}
             className="small-custom-button text-xs"
@@ -20,7 +20,7 @@ const TabContent = ({ activeTab, experience }) => {
             What they say about moi 🤘
           </button>
           {open ? <PopUp experience={experience} setOpen={setOpen} /> : null}
-        </div>
+        </motion.div>
       </div>
     );
   } else if (activeTab === 2) {
