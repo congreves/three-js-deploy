@@ -8,22 +8,7 @@ const Hero = ({ scrollToAboutSection }) => {
 
   return (
     <section className="relative w-full mx-auto">
-      <div className="grid-halves mt-16 top-[8rem] ">
-        <div
-          className={`${styles.paddingX} mt-20 pb-8 inset-0  max-w-7xl m-auto flex-row items-start gap-5 hidden lg:flex `}
-        >
-          <div>
-            <h1 className={`${styles.heroHeadText} `}>
-              Hi, I'm <span className="text-[#F7CA45] font-medium">Sandy!</span>
-            </h1>
-            <p className={`${styles.heroSubText} mt-2`}>
-              Passionated about <span className=" ">design development</span> ,
-              <br className="sm:block hidden" />
-              <span className=" ">(e)motions</span> &
-              <span className=""> experiences</span>.
-            </p>
-          </div>
-        </div>
+      <div className=" mt-16 top-[8rem] ">
         <div
           className="flex flex-col justify-center items-center p-4 border-t-2 border-black md:max-lg:border-l-2 md:max-lg:border-black bg-[image:var(--image-url)]"
           style={{ "--image-url": `url(${herobg})` }}

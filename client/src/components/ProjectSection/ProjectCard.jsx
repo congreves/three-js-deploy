@@ -10,11 +10,15 @@ export const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  technologies,
+  github_link,
+  delivery,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   function disableScroll() {
     setIsExpanded(!isExpanded);
   }
+
   return (
     <>
       <AnimatePresence onExitComplete>
@@ -33,7 +37,15 @@ export const ProjectCard = ({
           layout
           className={`${isExpanded ? "expanded-card" : "card"}`}
         >
-          <Tilt className="">
+          <Tilt
+            className=""
+            options={{
+              max: 5,
+              scale: 0.5,
+              speed: 0.5,
+              easing: "cubic-bezier(.03,.98,.52,.99)",
+            }}
+          >
             <motion.h4
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -52,15 +64,28 @@ export const ProjectCard = ({
                 exit={{ opacity: 0, type: "spring" }}
                 layout="position"
               >
-
-                <img src={image}/>
-                <p className="leading-relaxed tracking-wide">{description}</p>
+                <img
+                  src={image}
+                  className="min-w-[17rem] h-auto] lg:max-w-[40rem]"
+                />
+                <div className="flex flex-col gap-2 p-4">
+                  <span className="leading-relaxed tracking-wider text-[0.9rem] font-bold">
+                    Client need:
+                  </span>
+                  <span className="leading-relaxed tracking-wide text-[0.9rem] font-medium">
+                    {description}
+                  </span>
+                  <span className="leading-relaxed tracking-wide text-[0.9rem]  font-bold ">
+                    Delivery:
+                  </span>
+                  <span className="leading-relaxed tracking-wide text-[0.9rem] font-medium ">
+                    {delivery}
+                  </span>
+                </div>
                 <div className="flex gap-4 flex-start px-4">
                   <div className="small-custom-button-container">
                     <button
-                      onClick={() =>
-                        window.open("https://dkmg-mvp.netlify.app/")
-                      }
+                      onClick={() => window.open(source_code_link)}
                       className="small-custom-button"
                     >
                       Go to Site
@@ -68,23 +93,13 @@ export const ProjectCard = ({
                   </div>
                   <div className="small-custom-button-container">
                     <button
-                      onClick={() =>
-                        window.open("https://dkmg-mvp.netlify.app/")
-                      }
+                      onClick={() => window.open(github_link)}
                       className="small-custom-button"
                     >
                       Go to Github
                     </button>
                   </div>
                 </div>
-              <div className="mt-4 flex flex-wrap gap-2">
-              {tags.map((tag) => (           <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-             >
-               #{tag.name}
-            </p>
-           ))}       </div>
               </motion.div>
             )}
           </Tilt>

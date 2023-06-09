@@ -447,7 +447,7 @@ margin-bottom: 1rem;
   background-color: #ea5836;
   filter: drop-shadow(4px 4px 0px #000);
   border: 2px solid #000;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 .expanded-card-h {
   font-size: 1.5rem;

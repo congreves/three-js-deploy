@@ -12,8 +12,10 @@ import {
   Navbar,
   Experience,
   Carousel,
+  ScrollText,
 } from "./components";
 import { useRef } from "react";
+import { Scroll } from "@react-three/drei";
 
 
 function App() {

@@ -14,8 +14,6 @@ const wrap = (min, max, v) => {
   return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
 };
 
-
-
 export default function ScrollText() {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
@@ -57,12 +55,12 @@ export default function ScrollText() {
   return (
     <div className="parallax">
       <motion.div className="scroller" style={{ x }}>
-        <motion.span style={{ skew: skewVelocityFactor }}>
-         photos by me  
-        </motion.span>
-        <motion.span style={{ skew: skewVelocityFactor }}>
-        photos by me  
-        </motion.span>
+        {/* <motion.span style={{ skew: skewVelocityFactor }}>I'm Sandy.</motion.span>
+        <motion.span style={{ skew: skewVelocityFactor }}>I'm Passionated about</motion.span>
+        <motion.span style={{ skew: skewVelocityFactor }}>design development</motion.span>
+        <motion.span style={{ skew: skewVelocityFactor }} className="text-[#F7CA45]">(e)motions</motion.span>
+        <motion.span style={{ skew: skewVelocityFactor }}>&</motion.span>
+        <motion.span style={{ skew: skewVelocityFactor }}>experiences</motion.span> */}
         <motion.span style={{ skew: skewVelocityFactor }}>
         photos by me    
         </motion.span>
@@ -70,9 +68,14 @@ export default function ScrollText() {
         photos by me   
         </motion.span>
         <motion.span style={{ skew: skewVelocityFactor }}>
+        photos by me    
+        </motion.span>
+        <motion.span style={{ skew: skewVelocityFactor }} className="text-[#F7CA45]">
+        photos by me   
+        </motion.span>
+        <motion.span style={{ skew: skewVelocityFactor }}>
           TEXT TO FILL SPACE ON LARGER SCREENS LOL
         </motion.span>
-    
       </motion.div>
     </div>
   );

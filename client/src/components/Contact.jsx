@@ -7,7 +7,6 @@ import { fadeIn, slideIn } from "../utils/motion";
 import Tilt from "react-parallax-tilt";
 import { github, insta, linkd } from "../assets";
 
-
 // UctaQY5oJDAwTZTId
 // template_58ufs6h
 // service_ig1ttsq
@@ -26,40 +25,44 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    emailjs.send(
-      "service_ig1ttsq",
-      "template_58ufs6h",
-      {
-        from_name: form.name,
-        to_name: "Sandy",
-        from_email: form.email,
-        to_email: "congreves3@gmail.com",
-        message: form.message,
-      },
-      "UctaQY5oJDAwTZTId"
-    )
-    .then(() => {
-      setLoading(false)
-      alert("Message sent successfully! I'll get back to you soon.")
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-      })
-    },(error) => { setLoading(false) 
-      console.log(error)  
-      alert("Message failed to send.")
-    })
-}
-
+    emailjs
+      .send(
+        "service_ig1ttsq",
+        "template_58ufs6h",
+        {
+          from_name: form.name,
+          to_name: "Sandy",
+          from_email: form.email,
+          to_email: "congreves3@gmail.com",
+          message: form.message,
+        },
+        "UctaQY5oJDAwTZTId"
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("Message sent successfully! I'll get back to you soon.");
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error);
+          alert("Message failed to send.");
+        }
+      );
+  };
 
   return (
     <Tilt
-    options={{ max: 45, scale: 1, speed: 500 }}
+      options={{ max: 45, scale: 1, speed: 500 }}
       className="max-w-[90vw] md:max-w-[80vw] lg:max-w-[70vw] xl:max-w-[60vw] 2xl:max-w-[50vw] mx-auto"
     >
       <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
+        variants={slideIn("left", "tween", 0.04, 0.9)}
         className="flex-[0.75] bg-[#F7CA45] p-8 rounded-2xl  "
       >
         <p className={`${styles.sectionSubText} `}>Get in touch</p>
@@ -102,10 +105,7 @@ const Contact = () => {
               className="bg-[#FFF4E8] font-[500] py-4 px-6 placeholder:text-grey  rounded-lg outline-none border-none "
             />
           </label>
-          <button
-            className="custom-button bg-white font-black"
-            type="submit"
-          >
+          <button className="custom-button bg-white font-black" type="submit">
             {loading ? "Sending..." : "Submit"}
           </button>
         </form>
