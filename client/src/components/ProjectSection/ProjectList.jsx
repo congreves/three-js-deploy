@@ -1,6 +1,9 @@
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import React, { useState } from "react";
 import { projects } from "../../constants";
+import { styles } from "../../styles";
+import { cardVariants, fadeIn, textVariant } from "../../utils/motion";
+import { ProjectCard } from "./ProjectCard";
 import { fadeIn } from "../../utils/motion";
 import { ProjectCard } from "./ProjectCard";
 const ProjectList = ({ aboutSectionRef }) => {

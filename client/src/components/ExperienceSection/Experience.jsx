@@ -20,7 +20,7 @@ const ExperienceCard = ({ experience, index }) => {
         padding: "20px",
       }}
       contentArrowStyle={{ borderRight: `5px solid ${experience.bg}` }}
-      date={experience.date}
+      date={ experience.company_name + " - " + experience.date }
       iconStyle={{
         background: experience.iconBg,
         backgroundColor: "#fff",
@@ -49,9 +49,9 @@ const Experience = () => {
   
 
       <div className="mt-10 flex flex-col ">
-      <motion.div variants={textVariant()} className="mb-4">
+      <motion.div variants={textVariant()} className="mb-4 flex flex-col gap-4 ">
         <p className={styles.sectionSubText}>my experience so far</p>
-        <h2 className={styles.sectionHeadText}>👣 Curriculum Vitae </h2>
+        <h2 className={styles.sectionHeadText}>📍 Curriculum Vitae </h2>
       </motion.div>
         <VerticalTimeline  >
           {experiences.map((experience, index) => (

@@ -171,7 +171,7 @@ input[type="file"] {
 
 .hash-span {
   margin-top: -100px;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
   display: block;
 }
 /* canvas- styles */
@@ -326,7 +326,9 @@ Medium sized components (32px)
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.05rem;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 2px 2px 1px 1px rgb(0, 0, 0);
 }
 .custom-button:hover {
@@ -338,10 +340,12 @@ Medium sized components (32px)
   box-shadow: 1px 2px 0px 0px #000;
 }
 .small-custom-button-container {
-  background-position: 8px 53%;
-  background-size: 1.75rem;
-  bottom: 3rem;
-  right: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+margin-bottom: 2rem;
+
 }
 
 .small-custom-button {
@@ -368,6 +372,32 @@ Medium sized components (32px)
   box-shadow: 1px 2px 0px 0px #000;
 }
 
+.link-button-container {
+  background-position: 8px 53%;
+  background-size: 1.75rem;
+  bottom: 3rem;
+  right: 0;
+}
+
+.link-button {
+  color: #000;
+  background-color: #000;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 0.5rem 0.5rem;
+  display: inline-block;
+  box-shadow: 2px 2px 1px 1px rgb(0, 0, 0);
+  height: 4rem;
+  width: 4rem;
+}
+.link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 1px 1px rgb(0, 0, 0);
+}
+.link-button:active {
+  transform: translateY(4px);
+  box-shadow: 1px 2px 0px 0px #000;
+}
 .shadow {
   box-shadow: 2px 2px 1px 1px rgb(0, 0, 0);
 }

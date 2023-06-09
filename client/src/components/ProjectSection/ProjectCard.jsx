@@ -1,6 +1,7 @@
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import React, { useState } from "react";
 import Tilt from "react-parallax-tilt";
+import { github } from "../../assets";
 
 export const ProjectCard = ({
   company,
@@ -51,6 +52,7 @@ export const ProjectCard = ({
                 exit={{ opacity: 0, type: "spring" }}
                 layout="position"
               >
+
                 <img src={image}/>
                 <p className="leading-relaxed tracking-wide">{description}</p>
                 <div className="flex gap-4 flex-start px-4">
@@ -75,14 +77,14 @@ export const ProjectCard = ({
                     </button>
                   </div>
                 </div>
-                <p>
-                  {tags.map((tag) => (
-                    <span key={tag.name} className="text-white">
-                      {" "}
-                      {tag.name}/ {" "}
-                    </span>
-                  ))}
-                </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+              {tags.map((tag) => (           <p
+              key={`${name}-${tag.name}`}
+              className={`text-[14px] ${tag.color}`}
+             >
+               #{tag.name}
+            </p>
+           ))}       </div>
               </motion.div>
             )}
           </Tilt>

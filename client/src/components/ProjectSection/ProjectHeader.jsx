@@ -10,16 +10,16 @@ const ProjectHeader = ({aboutSectionRef}) => {
       <motion.div
         ref={aboutSectionRef}
         variants={textVariant()}
-        className="flex flex-col gap-2 "
+        className="flex flex-col gap-4 "
       >
         <p className={styles.sectionSubText}>What I've worked With</p>
         <h2 className={styles.sectionHeadText}>🧑🏾‍🎨 Projects </h2>
-        <motion.p
+        {/* <motion.p
           variants={fadeIn("", "", 0.1, 1)}
           className="text-[1rem] max-w-3xl leading-[1.8rem]"
         >
           Some projects to demonstarte my skills!
-        </motion.p>
+        </motion.p> */}
       </motion.div>
     </>
   );

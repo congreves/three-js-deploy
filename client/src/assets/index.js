@@ -7,7 +7,6 @@ import logoShirt from "./logo-tshirt.png";
 import stylishShirt from "./stylish-tshirt.png";
 import logo from "./logo.svg";
 
-import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
@@ -58,6 +57,14 @@ import marvin from "./company/marvin.jpeg";
 import nathalie from "./company/nathalie.jpeg";
 import viovin from "./company/viovin.png";
 import inno from "./company/inno.png";
+import linkd from "./company/linkd.svg"
+import insta from "./company/insta.svg"
+import github from "./company/github.svg"
+;
+
+export {
+  linkd,
+  insta,
 import mateus from "./mateus.png";
 
 export {
