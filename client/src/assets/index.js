@@ -65,6 +65,10 @@ import github from "./company/github.svg"
 export {
   linkd,
   insta,
+import mateus from "./mateus.png";
+
+export {
+  mateus,
   ben,
   marvin,
   nathalie,

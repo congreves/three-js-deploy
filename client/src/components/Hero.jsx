@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { StarsCanvas } from "./canvas";
 import { me } from "../assets";
 import { useState } from "react";
-// import { ComputersCanvas } from "./canvas";
+import { styles } from "../styles";
 const Hero = ({ scrollToAboutSection }) => {
   const [changeText, setChangeText] = useState(false);
 
@@ -47,8 +45,8 @@ const Hero = ({ scrollToAboutSection }) => {
         </div>
       </div>
       <div className="mt-6 xs:bottom-10 bottom-32 w-full flex justify-center items-center ">
-        <a href="#work" onTouchStart={scrollToAboutSection()}>
-          <div className="w-[2.2rem] h-[4rem] rounded-3xl border-4 border-black flex justify-center items-start shadow  ">
+        <a href="#about" onClick={scrollToAboutSection}>
+          <div className="w-[2.2rem] h-[4rem] rounded-3xl border-4  border-black flex justify-center items-start shadow  ">
             <motion.div
               animate={{ y: [0, 24, 0] }}
               transition={{
