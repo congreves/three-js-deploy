@@ -55,52 +55,19 @@ const Contact = () => {
 
   return (
     <Tilt
-    options={{ max: 45, scale: 1, speed: 450 }}
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
+    options={{ max: 45, scale: 1, speed: 500 }}
+      className="max-w-[90vw] md:max-w-[80vw] lg:max-w-[70vw] xl:max-w-[60vw] 2xl:max-w-[50vw] mx-auto"
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-[#ffbb01] p-8 rounded-2xl  "
+        className="flex-[0.75] bg-[#F7CA45] p-8 rounded-2xl  "
       >
         <p className={`${styles.sectionSubText} `}>Get in touch</p>
-        <h3 className={`${styles.sectionHeadText} + `}>🤝🏾Connect.</h3>
-        <motion.div   variants={fadeIn("", "", 0.1, 1)} className="pt-4 flex gap-4 mb-4 ">
-        <motion.div
-          onClick={() => window.open("https://github.com/congreves", "_blank")}
-          className=" link-button-container cursor-pointer"
-        >
-          <button className="link-button">
-            <img src={github} alt="github" className="object-contain" />
-          </button>
-        </motion.div>
-        <motion.div
-          onClick={() =>
-            window.open("https://www.linkedin.com/in/sandycongreve/", "_blank")
-          }
-          className="link-button-container cursor-pointer"
-        >
-          <button className="link-button">
-            <img src={linkd} alt="linkedin" className="object-contain" />
-          </button>
-        </motion.div>
-        <motion.div
-          onClick={() =>
-            window.open(
-              "https://www.instagram.com/sandysonrisa/?hl=en",
-              "_blank"
-            )
-          }
-          className="link-button-container cursor-pointer "
-        >
-          <button className="link-button">
-            <img src={insta} alt="instagram" className=" object-contain " />
-          </button>
-        </motion.div>
-      </motion.div>
+        <h3 className={`${styles.sectionHeadText} + `}>🤝🏾 Connect</h3>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
+          className="mt-8 flex flex-col gap-8"
         >
           <label className="flex flex-col">
             <span className=" font-medium mb-4">Your Name</span>
@@ -136,19 +103,13 @@ const Contact = () => {
             />
           </label>
           <button
-            className="custom-button"
+            className="custom-button bg-white font-black"
             type="submit"
           >
             {loading ? "Sending..." : "Submit"}
           </button>
         </form>
       </motion.div>
-      {/* <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[34.375rem] h-[21.875rem] "
-      >
-        <EarthCanvas />
-      </motion.div> */}
     </Tilt>
   );
 };

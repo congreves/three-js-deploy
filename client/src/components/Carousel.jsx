@@ -1,7 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { images } from "../constants";
+import Tilt from "react-parallax-tilt";
 
+import animationData from "./../lottie/bloo-hat-3.json";
+import { styles } from "../styles";
+import ScrollText from "./ScrollText";
 
 const cardVariants = {
   selected: {
@@ -23,6 +27,7 @@ const cardVariants = {
     transition: { duration: 0.35 },
   }),
 };
+
 const Carousel = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [{ startX, startScrollLeft, isDragging }, setDragStart] = useState({
@@ -69,30 +74,32 @@ const Carousel = () => {
     } else selectCard(card);
   };
   return (
+    <>
+       <ScrollText />
     <div
-      className="h-full w-full grid place-items-center bg-[#1C3CFA]"
+      className="h-full w-full grid place-items-center py-4 bg-[#1C3CFA]"
       onMouseDown={handleMouseDown}
       onMouseUp={() => setDragStart((prev) => ({ ...prev, isDragging: false }))}
       onMouseMove={handleMouseMove}
-    >
+    >           
+
       <div
         className="max-w-full whitespace-nowrap overflow-x-auto perspective-150 scrollbar-none"
         ref={containerRef}
       >
         {images.map((image, index) => (
           <motion.div
-            className="relative inline-block h-80 w-80 bg-black m-8 rounded-lg cursor-pointer"
+            className="relative inline-block h-80 w-80 bg-white m-4 rounded-lg cursor-pointer"
             key={image.id}
             ref={(el) => cardRefs.current.push(el)}
             onMouseUp={(e) => handleCardMouseUp(e, image.id)}
             variants={cardVariants}
             animate={selectedCard === image ? "selected" : "notSelected"}
-            custom={selectedCard ? selectedCard - service.id : 0}
+            custom={selectedCard ? selectedCard - image.id : 0}
           >
             <img
-              className="object-contain  max-h-full "
-              width="320"
-              height="320"
+              className="object-cover h-80 w-80 rounded-lg"
+              key={image.id}
               src={image.src}
               alt={image.title}
             />
@@ -100,6 +107,7 @@ const Carousel = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

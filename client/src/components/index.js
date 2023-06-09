@@ -7,6 +7,7 @@ import ProjectList from './ProjectSection/ProjectList';
 import ProjectHeader from './ProjectSection/ProjectHeader';
 import Contact from './Contact';
 import Carousel from './Carousel';
+import ScrollText from './ScrollText';
 
 export  {
   Hero,
@@ -17,5 +18,6 @@ export  {
   ProjectHeader,
   Contact,
   StarsCanvas,
-  Carousel
+  Carousel,
+  ScrollText
 }

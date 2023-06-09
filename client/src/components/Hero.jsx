@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { me } from "../assets";
 import { useState } from "react";
 import { styles } from "../styles";
+import { herobg } from "../assets";
 const Hero = ({ scrollToAboutSection }) => {
   const [changeText, setChangeText] = useState(false);
 
@@ -18,12 +19,15 @@ const Hero = ({ scrollToAboutSection }) => {
             <p className={`${styles.heroSubText} mt-2`}>
               Passionated about <span className=" ">design development</span> ,
               <br className="sm:block hidden" />
-              <span className=" ">motion</span> &
+              <span className=" ">(e)motions</span> &
               <span className=""> experiences</span>.
             </p>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center p-4 border-t-2 border-black md:max-lg:border-l-2 md:max-lg:border-black bg-[url('https://cdn.dribbble.com/users/1433291/screenshots/15078415/media/d10c93b8e835c6cfcd473a980cdb6203.jpg')]">
+        <div
+          className="flex flex-col justify-center items-center p-4 border-t-2 border-black md:max-lg:border-l-2 md:max-lg:border-black bg-[image:var(--image-url)]"
+          style={{ "--image-url": `url(${herobg})` }}
+        >
           <motion.img
             drag
             dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
@@ -35,10 +39,10 @@ const Hero = ({ scrollToAboutSection }) => {
           <div className="custom-button-container">
             <button
               onClick={() => setChangeText(!changeText)}
-              className="custom-button"
+              className="custom-button text-white bg-black"
             >
               {!changeText
-                ? "Hey I'm Sandy! I've been sitting here all day, move me around 👆🏾"
+                ? "Hey!👋🏾 I've been sitting here all day, move me around 👆🏾"
                 : "ME Up there 👆🏾👆🏾👆🏾 "}
             </button>
           </div>
