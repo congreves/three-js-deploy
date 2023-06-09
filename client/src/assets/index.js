@@ -57,17 +57,14 @@ import marvin from "./company/marvin.jpeg";
 import nathalie from "./company/nathalie.jpeg";
 import viovin from "./company/viovin.png";
 import inno from "./company/inno.png";
-import linkd from "./company/linkd.svg"
-import insta from "./company/insta.svg"
-import github from "./company/github.svg"
-;
+import linkd from "./company/linkd.svg";
+import insta from "./company/insta.svg";
+import github from "./company/github.svg";
+import mateus from "./mateus.png";
 
 export {
   linkd,
   insta,
-import mateus from "./mateus.png";
-
-export {
   mateus,
   ben,
   marvin,
