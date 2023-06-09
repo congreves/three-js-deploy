@@ -35,6 +35,7 @@ import {
   nathalie,
   viovin,
   inno,
+  mateus,
 } from "../assets";
 
 export const navLinks = [
@@ -279,7 +280,7 @@ const projects = [
       },
     ],
     image:
-      "https://www.nk.se/globalassets/60919123_mat-eboc5ceb_1.jpg?ref=F59213AAE9&w=2560&mode=pad&h=3200&format=jpg&quality=85",
+      mateus,
     source_code_link: "https://github.com/",
   },
   {
