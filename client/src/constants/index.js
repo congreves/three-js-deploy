@@ -36,6 +36,7 @@ import {
   viovin,
   inno,
   mateus,
+  viovinpage,
 } from "../assets";
 
 export const navLinks = [
@@ -98,7 +99,7 @@ const experiences = [
     tabs: [
       { id: 1, label: "Overview" },
       { id: 2, label: "Details" },
-      // { id: 3, label: "Reviews" },
+      { id: 3, label: "Reviews" },
     ],
   },
   {
@@ -137,7 +138,7 @@ const experiences = [
     tabs: [
       { id: 1, label: "Overview" },
       { id: 2, label: "Details" },
-      // { id: 3, label: "Reviews" },
+      { id: 3, label: "Reviews" },
     ],
   },
   {
@@ -180,7 +181,7 @@ const experiences = [
     tabs: [
       { id: 1, label: "Overview" },
       { id: 2, label: "Details" },
-      // { id: 3, label: "Reviews" },
+      { id: 3, label: "Reviews" },
     ],
   },
   {
@@ -212,7 +213,7 @@ const experiences = [
     tabs: [
       { id: 1, label: "Overview" },
       { id: 2, label: "Details" },
-      // { id: 3, label: "Reviews" },
+      { id: 3, label: "Reviews" },
     ],
   },
   {
@@ -254,7 +255,7 @@ const experiences = [
     tabs: [
       { id: 1, label: "Overview" },
       { id: 2, label: "Details" },
-      // { id: 3, label: "Reviews" },
+      { id: 3, label: "Reviews" },
     ],
   },
 ];
@@ -324,8 +325,8 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "https://i.ibb.co/59Mr9Pq/3-Chateau-Bellefontaine-blanc.jpg",
-    source_code_link: "https://dkmg-mvp.netlify.app/",
+    image: viovinpage,
+    source_code_link: "https://viovin.se",
   },
 ];
 const images = [
