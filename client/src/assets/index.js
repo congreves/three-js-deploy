@@ -61,8 +61,12 @@ import linkd from "./company/linkd.svg";
 import insta from "./company/insta.svg";
 import github from "./company/github.svg";
 import mateus from "./mateus.png";
+import viovinpage from "./company/viovinpage.png";
+import herobg from "./hero-bg.svg";
 
 export {
+  herobg,
+  viovinpage,
   linkd,
   insta,
   mateus,

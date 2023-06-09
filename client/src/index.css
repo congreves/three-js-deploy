@@ -315,8 +315,6 @@ Medium sized components (32px)
   right: 0;
 }
 .custom-button {
-  color: #000;
-  background-color: #FFF4E8;
   background-position: 8px 59%;
   background-repeat: no-repeat;
   background-size: 2.25rem;
@@ -344,7 +342,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-start;
-margin-bottom: 2rem;
+margin-bottom: 1rem;
 
 }
 
@@ -387,8 +385,8 @@ margin-bottom: 2rem;
   padding: 0.5rem 0.5rem;
   display: inline-block;
   box-shadow: 2px 2px 1px 1px rgb(0, 0, 0);
-  height: 4rem;
-  width: 4rem;
+  height: 3rem;
+  width: 3rem;
 }
 .link-button:hover {
   transform: translateY(-2px);
@@ -449,7 +447,7 @@ margin-bottom: 2rem;
   background-color: #ea5836;
   filter: drop-shadow(4px 4px 0px #000);
   border: 2px solid #000;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 .expanded-card-h {
   font-size: 1.5rem;
@@ -506,4 +504,29 @@ margin-bottom: 2rem;
 }
 .card-image {
   transform: translateZ(0);
+}
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 20px auto;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  padding-top: 1rem;
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 64px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax span {
+  display: block;
+  margin-right: 30px;
 }

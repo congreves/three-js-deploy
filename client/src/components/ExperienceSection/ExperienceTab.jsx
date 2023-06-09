@@ -1,26 +1,17 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import PopUp from "./PopUp";
+
 
 const TabContent = ({ activeTab, experience }) => {
   const technologies = experience.technologies;
-  const [open, setOpen] = useState(false);
+
   if (activeTab === 1) {
     return (
-      <div className="flex flex-col gap-4">
-        <h3 className="bg-inherit ">{experience.title}</h3>
-        {/* <p className="bg-inherit tracking-wider" >
+      <div className="mt-4 flex flex-col gap-2">
+        <h4 className="bg-inherit tracking-wider text-slate-200" >
           {experience.company_name}
-        </p> */}
-        <motion.div className="small-custom-button-container">
-          <button
-            onClick={() => setOpen(!open)}
-            className="small-custom-button text-xs"
-          >
-            What they say about moi 🤘
-          </button>
-          {open ? <PopUp experience={experience} setOpen={setOpen} /> : null}
-        </motion.div>
+        </h4>
+        <h3 className="bg-inherit ">{experience.title}</h3>
       </div>
     );
   } else if (activeTab === 2) {
@@ -48,7 +39,40 @@ const TabContent = ({ activeTab, experience }) => {
       </ul>
     );
     return <div>No content to display</div>;
+  }else if (activeTab === 3) {
+    return (
+      <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, type: "spring" }}
+      exit={{ opacity: 0, type: "spring" }}
+      layout="position"
+      className="mt-1"
+    >
+      <motion.p layout="position" className="tracking-wider text-[1rem]">
+       " {experience.testimonial} "
+      </motion.p>
+
+      <motion.div className="mt-7 flex justify-between items-center gap-1">
+        <div className="flex-1 flex flex-col">
+          <p className=" font-medium text-[0.875rem]">
+            <span className="">@</span> {experience.name}
+          </p>
+          <p className="mt-1  text-[0.5rem]">
+            {experience.designation} of {experience.company}
+          </p>
+        </div>
+        <img
+          src={experience.image}
+          alt={`feedback-by-${experience.name}`}
+          className="w-10 h-10 rounded-full object-cover"
+        />
+      </motion.div>
+    </motion.div>
+    );
+    return <div>No content to display</div>;
   }
+
 };
 
 function ExperienceTab({ experience }) {
