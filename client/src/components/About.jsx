@@ -17,10 +17,10 @@ const About = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className=" max-w-3xl leading-[1.8rem] tracking-wide mt-4 "
         >
-          Hi, I'm Sandy! I'm a front-end developer with experience working with e-commerce clients such as Mateus, Stronger,
-          Xlash, and more. I specialize in JavaScript frameworks like React and
-          Vue but always curious to adapting to new ones. I also have expertise in headless cms platforms like
-          Storyblok, cloud services like Centra, and Ui libraries like storybook. My diverse background includes
+          Hi, I'm Sandy! I'm a frontend developer with experience working with e-commerce clients such as Mateus, Stronger,
+          Xlash, and more. I specialize in CSS frameworks & JavaScript frameworks like React,
+          Vue, QwikJs but always curious to adapting to new ones. I also have expertise in headless cms platforms like
+          Storyblok, cloud services like Centra, and Ui libraries like Storybook. My diverse background includes
           UX/UI design and international experiences. Let's discuss how I can
           contribute to your company and create exisiting digital solutions.
         </motion.p>

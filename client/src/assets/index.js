@@ -29,12 +29,14 @@ import webflow from "./tech/webflow.png";
 import adobe from "./tech/adobe.png";
 import styled from "./tech/sc.png";
 import netlify from "./tech/netlify.png";
-
+import qwik from "./tech/qwik.png";
+import pandacss from "./tech/panda.png";
 import triggers from "./company/triggers.png";
 import mp from "./company/mp.svg";
 import svea from "./company/svea.png";
 import me from "./ME.png";
 import sandy from "./sandytext.png";
+import alska from "./company/alska.png"
 
 import bild2 from "./myphotos/bild2.png";
 import bild1 from "./myphotos/billd1.png";
@@ -89,6 +91,9 @@ export {
   mp,
   svea,
   sandy,
+  alska,
+  pandacss,
+  qwik,
   me,
   ai,
   fileIcon,

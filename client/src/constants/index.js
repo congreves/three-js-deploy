@@ -37,6 +37,9 @@ import {
   inno,
   mateus,
   viovinpage,
+  alska,
+  qwik,
+  pandacss,
 } from "../assets";
 
 export const navLinks = [
@@ -57,13 +60,55 @@ export const navLinks = [
 const experiences = [
   {
     id: 1,
+    title: "Frontend Developer / Design Developer",
+    company_name: "Älska Studio",
+    location: "Remote",
+    icon: alska,
+    iconBg: "#FFF4E8",
+    bg: "#000",
+    date: "July 2023 - Current",
+    testimonial: "-",
+    name: "Lucas Meijer",
+    designation: "Co-Founder",
+    company: "Älska Studio",
+    image: alska,
+    technologies: [
+      {
+        name: "QwikJs",
+        icon: qwik,
+      },
+      {
+        name: "Netlify",
+        icon: netlify,
+      },
+      {
+        name: "PandaCss",
+        icon: pandacss,
+      },
+      {
+        name: "Storybook",
+        icon: storybook,
+      },
+    ],
+    points: [
+      "Developing and internal product using QwikJS framework and PandaCSS for styling",
+      "Builiding out a Design system in Figma for multiple brand purpose.",
+    ],
+    tabs: [
+      { id: 1, label: "Overview" },
+      { id: 2, label: "Details" },
+      { id: 3, label: "Reviews" },
+    ],
+  },
+  {
+    id: 2,
     title: "UI Developer Intern",
     company_name: "Made People",
     location: "Stockholm, Sweden",
     icon: mp,
     iconBg: "#FFF4E8",
-    bg: "#000",
-    date: "Jan 2023 - Current",
+    bg: "#1C3CFA",
+    date: "Jan 2023 - July 2023",
     testimonial: "Sandy makes amazing banana bread! (not that I eat bananas)",
     name: "Ben Counsell",
     designation: "UI Lead Developer",
@@ -103,7 +148,7 @@ const experiences = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Frontend Developer",
     company_name: "VioVin",
     location: "Stockholm, Sweden",
@@ -142,7 +187,7 @@ const experiences = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "UX/UI Designer",
     company_name: "Try Triggers",
     location: "Barcelona, Spain",
@@ -185,7 +230,7 @@ const experiences = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "UI Designer",
     company_name: "Svea Solar",
     location: "Stockholm, Sweden",
@@ -217,7 +262,7 @@ const experiences = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "Other Activities",
     company_name: "Hyper Island / Changemaker Educations",
     location: "Karlskrona / Stockholm, Sweden",
@@ -263,6 +308,40 @@ const experiences = [
 const projects = [
   {
     id: 1,
+    company: "WORK IN PROGRESS",
+    description:
+      "WORK IN PROGRESS",
+    tags: [
+      {
+        name: "panda-css",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "qwik-js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "figma",
+        color: "pink-text-gradient",
+      },
+    ],
+    technologies: [
+      {
+        name: "QwikJs",
+        icon: qwik,
+      },
+      {
+        name: "PandaCss",
+        icon: pandacss,
+      },
+    ],
+    image: alska,
+    source_code_link: "https://alska.studio/",
+    delivery:
+      "-",
+  },
+  {
+    id: 2,
     company: "Mateus",
     description:
       "A pop up with informatin about the membership so that customers sign up.",
@@ -308,7 +387,7 @@ const projects = [
       "This project involves creating a pop-up that highlights the benefits of a club. Users should be able to edit the text and image of the pop-up, as well as the call-to-action label and link through their Storyblok Account settings. The pop-up should have a close button, and once closed, it should not appear again (using cookies to remember the preference). It should only appear after the user's first action on any page and only for non-logged-in customers, if possible.",
   },
   {
-    id: 2,
+    id: 3,
     company: "Food App",
     description:
       "A web application that allows users to search for recipes based on their dietary restrictions and preferences.",
@@ -333,7 +412,7 @@ const projects = [
       "In my final school project, I took on the role of design developer. I was responsible for wireframing, designing, and creating the branding for the application. I also built UI components and pages using React. Additionally, I implemented important features like login functionality, animations, and loading states. Throughout the project, I collaborated closely with a team of three, actively participating in stand-ups and workshops. These experiences highlight my ability to contribute to frontend development projects and demonstrate my teamwork and communication skills, making me an ideal candidate for my first job as a frontend developer.",
   },
   {
-    id: 3,
+    id: 4,
     company: "VioVin",
     description: "Business site for wine distribution company.",
     tags: [
@@ -379,7 +458,7 @@ const projects = [
       "For a start-up seeking to establish an online presence, I successfully created a website to promote their business. As the sole contributor, I took on the responsibilities of designing, developing, and publishing the website. The site consists of three pages, accompanied by a navigation bar for easy navigation. Users can access information about the company and explore their products. While users have the ability to contact the business through the site, it does not support direct purchases. The website is designed to be responsive, ensuring optimal viewing across various devices. These accomplishments highlight my proficiency in end-to-end website development and demonstrate my ability to meet client needs effectively.",
   },
   {
-    id: 3,
+    id: 5,
     company: "Svea Solar",
     description: "Leading business within solar energy in Sweden.",
     tags: [
